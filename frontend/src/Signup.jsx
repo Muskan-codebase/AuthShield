@@ -1,7 +1,7 @@
 import React from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import toast, { Toaster } from "react-hot-toast";
@@ -16,6 +16,38 @@ function Signup() {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        // Initialize Google Sign-In
+        google.accounts.id.initialize({
+            client_id: "447769262246-ic62bekl2etfnia24afv2b8p51jompnq.apps.googleusercontent.com", // replace with your Google Client ID
+            callback: handleGoogleResponse,
+        });
+
+        // Render the button in the container
+        google.accounts.id.renderButton(
+            document.getElementById("googleSignIn"),
+            { theme: "outline", size: "large", width: "100%" }
+        );
+    }, []);
+
+    // Handle Google response
+    const handleGoogleResponse = async (response) => {
+        try {
+            // Send Google ID token to your backend
+            const res = await axios.post("http://localhost:3000/api/auth/google", {
+                token: response.credential,
+            });
+
+            // Save JWT
+            localStorage.setItem("Token", res.data.token);
+            toast.success("Logged in successfully with Google!");
+            navigate("/profile"); // redirect after login
+        } catch (err) {
+            console.error(err);
+            toast.error("Google login failed. Try again.");
+        }
+    };
 
     function handleShowPassword() {
         setShowPassword(!showPassword)
@@ -129,13 +161,16 @@ function Signup() {
                     </div>
 
                     <button className='text-lg p-2 mt-2 w-full bg-blue-600 text-white rounded hover:bg-blue-500 cursor-pointer active:bg-blue-700'>Sign up</button>
-                    <button className='flex items-center justify-center border-2 border-black text-lg p-2 w-full bg-white text-black rounded'><FcGoogle /> Sign in with Google</button>
+                    {/* Google Sign-In container */}
+                    <div id="googleSignIn">
+                        <button type="button" className='flex items-center justify-center border-2 border-black text-lg p-2 w-full bg-white text-black rounded cursor-pointer'><FcGoogle /> Sign in with Google</button>
+                    </div>
                     <p className='text-center'>Already have an account? <span className='font-semibold text-blue-600 cursor-pointer'>
                         <Link to="/login">Login</Link>
                     </span></p>
 
-                </form>
-            </div>
+                </form >
+            </div >
 
             <Toaster
                 position="top-center"
