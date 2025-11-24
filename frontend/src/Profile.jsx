@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { MdEditSquare } from "react-icons/md";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { RiDeleteBin5Fill } from "react-icons/ri";
-import profileIcon from "./assets/profile-icon.png";
+import profileIcon from "./assets/profile-icon.webp";
 import EditProfile from './EditProfile';
 import axios from "axios"
 
@@ -52,12 +52,16 @@ function Profile() {
       <div className='flex itmes-center justify-center'>
         <div className='border-2 border-gray-300 shadow-2xl shadow-gray-500 w-100 h-auto p-5 rounded-xl text-center mt-5'>
           <h1 className='text-4xl font-semibold text-black'>Profile</h1>
-          <div className='flex items-center justify-center'>
-            {user?.profilePic ?
-              (<img src={`${user.profilePic}`}></img>)
-              :
-              (<img src={profileIcon} className='h-60 w-60'></img>)
-            }
+          <div className='flex items-center justify-center mt-5 mb-5'>
+            <div className="avatar">
+              <div className="w-50 h-50 border-blue-800 border-7 rounded-full">
+                {user?.profilePic ?
+                  (<img src={`${user.profilePic}`}></img>)
+                  :
+                  (<img src={profileIcon}></img>)
+                }
+              </div>
+            </div>
           </div>
           <p className='text-2xl'>{user?.name}</p>
           <p className='text-2xl'>{user?.email}</p><br></br>
