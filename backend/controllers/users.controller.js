@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const createJWT = require("../middleware/generateToken")
 const generateOTP = require("../utils/generateOTP")
 const sendEmail = require("../utils/sendEmail")
+const cloudinary = require("../utils/cloudinary");
 
 const signup = async (req, res) => {
 
@@ -215,6 +216,42 @@ const uploadProfilePic = async (req, res) => {
     }
 }
 
+const removeProfilePic = async (req, res) => {
+
+    try {
+        const { userId } = req.user;
+
+        const user = await Users.findById(userId);
+
+        if (!user) {
+            return res.status(400).json({ message: "No such User found!" });
+        }
+
+        if (!user.profilePic) {
+            return res.status(400).json({ message: "No picture to delete" })
+        }
+
+        // Extract public_id from stored URL
+        const imageUrl = user.profilePic;
+        const splitUrl = imageUrl.split("/");
+        const publicIdWithExt = splitUrl[splitUrl.length - 1];  // abc123.jpeg or jpg
+        const publicId = "profilePicture/" + publicIdWithExt.split(".")[0]; // profilePicture/abc123
+
+        const imageDeleted = await cloudinary.uploader.destroy(publicId);
+
+        if (imageDeleted) {
+            user.profilePic = "";
+            await user.save();
+            return res.status(200).json({ message: "Photo removed" })
+        }
+
+    } catch (error) {
+
+        res.status(500).json({ message: error });
+
+    }
+}
+
 module.exports = {
     signup,
     login,
@@ -222,6 +259,7 @@ module.exports = {
     verifyOTP,
     resetPassword,
     getUserProfile,
-    uploadProfilePic
+    uploadProfilePic,
+    removeProfilePic
 }
 
