@@ -12,35 +12,35 @@ multiple layers of protection against <b>brute-force attacks</b>, <b>XSS</b>, an
   <li>Protected routes & middleware</li>
 </ol>
 
-<h2>📩 Password Reset (OTP)</h2>
+<h3>📩 Password Reset (OTP)</h3>
 <ol>
   <li>OTP generation & expiry</li>
   <li>Email sending using Nodemailer</li>
   <li>OTP verification & password update</li>
 </ol>
 
-<h2>🖼️ Profile Management</h2>
+<h3>🖼️ Profile Management</h3>
 <ol>
   <li>Profile picture upload (Cloudinary)</li>
   <li>Secure image URLs</li>
   <li>Update name, email, password, profile image</li>
 </ol>
 
-<h2>🔐 OAuth Integration</h2>
+<h3>🔐 OAuth Integration</h3>
 <ol>
   <li>Google OAuth 2.0 implemented using the Google OAuth Library</li>
   <li>Code exchange → Token verification → User creation/login</li>
   <li>Works without Passport.js</li>
 </ol>
 
-<h1>🛡️ Security Implementations</h1>
-<h2>🚫 Brute-Force Protection</h2>
+<h2>🛡️ Security Implementations</h2>
+<h3>🚫 Brute-Force Protection</h3>
 <ol>
   <li>Rate limiting on login & signup APIs</li>
   <li>Throttling after multiple failed attempts</li>
 </ol>
 
-<h2>🧹 Sanitization & Validation</h2>
+<h3>🧹 Sanitization & Validation</h3>
 <ol>
   <li>xss-clean (prevents XSS)</li>
   <li>validator (sanitizes email & inputs)</li>
@@ -48,14 +48,14 @@ multiple layers of protection against <b>brute-force attacks</b>, <b>XSS</b>, an
   <li>Helmet (secure HTTP headers)</li>
 </ol>
 
-<h2>🔒 Token & Session Security</h2>
+<h3>🔒 Token & Session Security</h3>
 <ol>
   <li>Safe token storage</li>
   <li>User authentication middleware</li>
   <li>Proper error handling for invalid/expired tokens</li>
 </ol>
 
-<h1>📝 What I Learned</h1>
+<h2>📝 What I Learned</h2>
 <ul>
   <li>Deep understanding of JWT and token-based authentication</li>
   <li>Implementing Google OAuth 2.0 from scratch</li>
@@ -65,7 +65,7 @@ multiple layers of protection against <b>brute-force attacks</b>, <b>XSS</b>, an
   <li>Writing clean, modular, scalable Node.js code</li>
 </ul>
 
-<h1>🛠 Tech Stack</h1>
+<h2>🛠 Tech Stack</h2>
 <ul>
   <li><b>Frontend</b>: React.js, Tailwind CSS, Daisy UI.</li>
   <li><b>Backend</b>: Node.js, Express, Mongoose, REST API.</li>
