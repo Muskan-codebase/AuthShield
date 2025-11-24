@@ -55,6 +55,15 @@ multiple layers of protection against <b>brute-force attacks</b>, <b>XSS</b>, an
   <li>Proper error handling for invalid/expired tokens</li>
 </ol>
 
+<h2>🛠 Tech Stack</h2>
+<ul>
+  <li><b>Frontend</b>: React.js, Tailwind CSS, Daisy UI.</li>
+  <li><b>Backend</b>: Node.js, Express, Mongoose, REST API.</li>
+  <li><b>Database</b>: MongoDB.</li>
+  <li><b>Security Libraries</b>: bcrypt, express-rate-limit, xss-clean, validator, helmet.</li>
+  <li><b>Third-Part Integration</b>: Cloudinary, Nodemailer, Google OAuth 2.0</li>
+</ul>
+
 <h2>📝 What I Learned</h2>
 <ul>
   <li>Deep understanding of JWT and token-based authentication</li>
@@ -63,13 +72,4 @@ multiple layers of protection against <b>brute-force attacks</b>, <b>XSS</b>, an
   <li>Preventing real-world attacks: brute-force, XSS, NoSQL injection</li>
   <li>Cloudinary file uploads & storage</li>
   <li>Writing clean, modular, scalable Node.js code</li>
-</ul>
-
-<h2>🛠 Tech Stack</h2>
-<ul>
-  <li><b>Frontend</b>: React.js, Tailwind CSS, Daisy UI.</li>
-  <li><b>Backend</b>: Node.js, Express, Mongoose, REST API.</li>
-  <li><b>Database</b>: MongoDB.</li>
-  <li><b>Security Libraries</b>: bcrypt, express-rate-limit, xss-clean, validator, helmet.</li>
-  <li><b>Third-Part Integration</b>: Cloudinary, Nodemailer, Google OAuth 2.0</li>
 </ul>
