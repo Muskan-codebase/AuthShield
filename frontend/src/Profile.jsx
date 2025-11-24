@@ -78,7 +78,7 @@ function Profile() {
     }
 
   }
-  
+
   return (
     <>
       <div className='flex itmes-center justify-center'>
