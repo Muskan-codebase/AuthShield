@@ -25,12 +25,13 @@ function Profile() {
     const fetchData = async () => {
 
       const userToken = localStorage.getItem("Token");
+      console.log(userToken)
 
       try {
 
         const response = await axios.get("http://localhost:3000/api/getUserProfile", {
           headers: {
-            "Authorization": `bearer ${userToken}`,
+            "Authorization": `Bearer ${userToken}`,
           }
         });
 
