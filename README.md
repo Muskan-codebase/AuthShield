@@ -59,7 +59,7 @@ multiple layers of protection against <b>brute-force attacks</b>, <b>XSS</b>, an
 <ul>
   <li>Deep understanding of JWT and token-based authentication</li>
   <li>Implementing Google OAuth 2.0 from scratch</li>
-  <li>Designing secure backend architecture</li>
+  <li>sending mails and verifying OTP using Nodemailer</li>
   <li>Preventing real-world attacks: brute-force, XSS, NoSQL injection</li>
   <li>Cloudinary file uploads & storage</li>
   <li>Writing clean, modular, scalable Node.js code</li>
