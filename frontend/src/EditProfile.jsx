@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from "axios"
+import toast, { Toaster } from "react-hot-toast";
 import { useState } from 'react'
 
 function EditProfile() {
@@ -34,6 +35,7 @@ function EditProfile() {
             )
 
             console.log("Updated Profile", response.data);
+            toast.success(response.data.message);
             window.location.reload();
 
         } catch (error) {

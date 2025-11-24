@@ -6,6 +6,7 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import profileIcon from "./assets/profile-icon.webp";
 import EditProfile from './EditProfile';
+import toast, { Toaster } from "react-hot-toast";
 import axios from "axios"
 
 function Profile() {
@@ -47,6 +48,37 @@ function Profile() {
 
   }, [])
 
+  const removeProfilePic = async () => {
+
+    const token = localStorage.getItem("Token");
+
+    try {
+
+      const response = await axios.delete("http://localhost:3000/api/removeProfilePic", {
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "Application/json"
+        }
+      })
+
+      console.log(response.data);
+      toast.success(response.data.message);
+      window.location.reload();
+
+
+    } catch (error) {
+
+      if (error.response.data && error.response.data.message) {
+        toast.error(error.response.data.message)
+      } else {
+        toast.error("Some Error occured during Signup Process. Try again ....")
+        console.log("Error", error);
+      }
+
+    }
+
+  }
+  
   return (
     <>
       <div className='flex itmes-center justify-center'>
@@ -68,7 +100,7 @@ function Profile() {
 
           <div className='space-y-4'>
             <button onClick={() => document.getElementById('my_modal_3').showModal()} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer'><MdEditSquare />Edit profile</button>
-            <button className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer'>Remove Photo</button>
+            <button onClick={removeProfilePic} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer'>Remove Photo</button>
             <button onClick={userLogout} className='flex items-center justify-center bg-red-600 border-none p-2 w-full text-white text-md rounded  hover:bg-red-500 cursor-pointer'><RiLogoutCircleLine />Logout</button>
             <button className='flex items-center justify-center bg-red-600 border-none p-2 w-full text-white text-md rounded  hover:bg-red-500 cursor-pointer'><RiDeleteBin5Fill />Delete Account</button>
           </div>
@@ -76,6 +108,11 @@ function Profile() {
       </div>
 
       <EditProfile></EditProfile>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
+
     </>
   )
 }
