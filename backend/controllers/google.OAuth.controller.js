@@ -29,7 +29,7 @@ const googleLogin = async (req, res) => {
     }
 
     // Generate JWT using your existing function
-    const jwtToken = createJWT({ id: user._id });
+    const jwtToken = createJWT({ userId: user._id });
 
     res.json({ token: jwtToken, user });
   } catch (err) {
