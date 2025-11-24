@@ -66,8 +66,10 @@ multiple layers of protection against <b>brute-force attacks</b>, <b>XSS</b>, an
 </ul>
 
 <h1>🛠 Tech Stack</h1>
-<b>Frontend</b>: React.js, Tailwind CSS, Daisy UI.
-<b>Backend</b>: Node.js, Express, Mongoose, REST API.
-<b>Database</b>: MongoDB.
-<b>Security</b>: bcrypt, express-rate-limit, xss-clean, validator, helmet.
-<b>Libraries</b>: Cloudinary, Nodemailer, Google OAuth Library.
+<ul>
+  <li><b>Frontend</b>: React.js, Tailwind CSS, Daisy UI.</li>
+  <li><b>Backend</b>: Node.js, Express, Mongoose, REST API.</li>
+  <li><b>Database</b>: MongoDB.</li>
+  <li><b>Security</b>: bcrypt, express-rate-limit, xss-clean, validator, helmet.</li>
+  <li><b>Libraries</b>: Cloudinary, Nodemailer, Google OAuth Library.</li>
+</ul>
