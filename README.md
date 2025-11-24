@@ -40,34 +40,27 @@ multiple layers of protection against <b>brute-force attacks</b>, <b>XSS</b>, an
   <li>Throttling after multiple failed attempts</li>
 </ol>
 
-🧹 Sanitization & Validation
+<h2>🧹 Sanitization & Validation</h2>
+<ol>
+  <li>xss-clean (prevents XSS)</li>
+  <li>validator (sanitizes email & inputs)</li>
+  <li>mongoose-sanitize (prevents NoSQL injection)</li>
+  <li>Helmet (secure HTTP headers)</li>
+</ol>
 
-xss-clean (prevents XSS)
+<h2>🔒 Token & Session Security</h2>
+<ol>
+  <li>Safe token storage</li>
+  <li>User authentication middleware</li>
+  <li>Proper error handling for invalid/expired tokens</li>
+</ol>
 
-validator (sanitizes email & inputs)
-
-mongoose-sanitize (prevents NoSQL injection)
-
-Helmet (secure HTTP headers)
-
-🔒 Token & Session Security
-
-Safe token storage
-
-User authentication middleware
-
-Proper error handling for invalid/expired tokens
-
-🧠 What I Learned
-
-Deep understanding of JWT and token-based authentication
-
-Implementing Google OAuth 2.0 from scratch
-
-Designing secure backend architecture
-
-Preventing real-world attacks: brute-force, XSS, NoSQL injection
-
-Cloudinary file uploads & storage
-
-Writing clean, modular, scalable Node.js code
+<h1>📝 What I Learned</h1>
+<ul>
+  <li>Deep understanding of JWT and token-based authentication</li>
+  <li>Implementing Google OAuth 2.0 from scratch</li>
+  <li>Designing secure backend architecture</li>
+  <li>Preventing real-world attacks: brute-force, XSS, NoSQL injection</li>
+  <li>Cloudinary file uploads & storage</li>
+  <li>Writing clean, modular, scalable Node.js code</li>
+</ul>
