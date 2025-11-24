@@ -3,6 +3,7 @@ const app = express();
 const DBConnection = require("./db.connection");
 const userRoute = require("./routes/user.routes");
 const { rateLimiter } = require("./rate-limiter/rateLimiter")
+const googleOAuthRoute = require("./routes/google.OAuth.route")
 const cors = require("cors");
 require("./config")
 
@@ -25,6 +26,7 @@ app.get("/", (_, res) => {
 })
 
 app.use("/api", userRoute);
+app.use("/api/auth", googleOAuthRoute)
 
 app.listen(PORT, () => {
     console.log(`Server is running on PORT:${PORT}`)

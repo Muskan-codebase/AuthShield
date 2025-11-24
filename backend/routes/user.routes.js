@@ -1,5 +1,6 @@
 const verifyToken = require("../middleware/verifyJwtToken");
-const { signup, login, sendOTP, verifyOTP, resetPassword, getUserProfile, uploadProfilePic, removeProfilePic } = require("../controllers/users.controller")
+const { signup, login, sendOTP, verifyOTP, resetPassword, 
+getUserProfile, uploadProfilePic, removeProfilePic } = require("../controllers/users.controller")
 const { signupLimiter, loginLimiter } = require("../rate-limiter/rateLimiter")
 const parser = require("../middleware/upload");
 const express = require("express")

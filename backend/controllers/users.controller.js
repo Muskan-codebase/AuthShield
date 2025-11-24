@@ -260,6 +260,6 @@ module.exports = {
     resetPassword,
     getUserProfile,
     uploadProfilePic,
-    removeProfilePic
+    removeProfilePic,
 }
 
