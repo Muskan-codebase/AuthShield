@@ -34,26 +34,6 @@ multiple layers of protection against <b>brute-force attacks</b>, <b>XSS</b>, an
 </ol>
 
 <h2>🛡️ Security Implementations</h2>
-<h3>🚫 Brute-Force Protection</h3>
-<ol>
-  <li>Rate limiting on login & signup APIs</li>
-  <li>Throttling after multiple failed attempts</li>
-</ol>
-
-<h3>🧹 Sanitization & Validation</h3>
-<ol>
-  <li>xss-clean (prevents XSS)</li>
-  <li>validator (sanitizes email & inputs)</li>
-  <li>mongoose-sanitize (prevents NoSQL injection)</li>
-  <li>Helmet (secure HTTP headers)</li>
-</ol>
-
-<h3>🔒 Token & Session Security</h3>
-<ol>
-  <li>Safe token storage</li>
-  <li>User authentication middleware</li>
-  <li>Proper error handling for invalid/expired tokens</li>
-</ol>
 
 <h2>🛠 Tech Stack</h2>
 <ul>
