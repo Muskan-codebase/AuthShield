@@ -6,8 +6,14 @@ const { rateLimiter } = require("./rate-limiter/rateLimiter")
 const googleOAuthRoute = require("./routes/google.OAuth.route")
 const cors = require("cors");
 const helmet = require("helmet");
-const mongooseSanitize = require("express-mongo-sanitize")
+const mongoSanitize = require("express-mongo-sanitize")
 require("./config")
+
+app.use(cors({
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}))
 
 //built-in middleware to convert incoming request data to json()
 app.use(express.json())
@@ -18,13 +24,12 @@ app.use(helmet())
 
 //express-mongo-sanitize is a built-in middleware to prevent NoSQL injection attacks.
 //filters out MongoDB operators from inputs/client requests data.
-app.use(mongooseSanitize())
-
-app.use(cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
-}))
+app.use((req, res, next) => {
+  if (req.body) {
+    mongoSanitize.sanitize(req.body);
+  }
+  next();
+})
 
 //middleware to block API request after certain attempts within a specified time frame (15 mins)
 app.use(rateLimiter)
