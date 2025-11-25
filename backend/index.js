@@ -5,10 +5,20 @@ const userRoute = require("./routes/user.routes");
 const { rateLimiter } = require("./rate-limiter/rateLimiter")
 const googleOAuthRoute = require("./routes/google.OAuth.route")
 const cors = require("cors");
+const helmet = require("helmet");
+const mongooseSanitize = require("express-mongo-sanitize")
 require("./config")
 
 //built-in middleware to convert incoming request data to json()
 app.use(express.json())
+
+// Helmet is a built-in middleware to add security-related HTTP headers
+// Protects against XSS, clickjacking, MIME type sniffing, and other attacks
+app.use(helmet())
+
+//express-mongo-sanitize is a built-in middleware to prevent NoSQL injection attacks.
+//filters out MongoDB operators from inputs/client requests data.
+app.use(mongooseSanitize())
 
 app.use(cors({
     origin: "http://localhost:5173",
