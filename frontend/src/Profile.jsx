@@ -91,7 +91,7 @@ function Profile() {
             <div className="avatar">
               <div className="w-50 h-50 border-blue-800 border-7 rounded-full">
                 {user?.profilePic ?
-                  (<img src={`${user.profilePic}`}></img>)
+                  (<img src={`${user?.profilePic}`}></img>)
                   :
                   (<img src={profileIcon}></img>)
                 }
