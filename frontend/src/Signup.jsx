@@ -6,6 +6,7 @@ import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
+import useSignup from './custom-hooks/useSignup';
 
 function Signup() {
 
@@ -16,6 +17,7 @@ function Signup() {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const navigate = useNavigate();
+    const { signup } = useSignup();
 
     useEffect(() => {
         // Initialize Google Sign-In
@@ -75,37 +77,8 @@ function Signup() {
 
     const userSignup = async (e) => {
         e.preventDefault();
+        signup({ name, email, password, confirmPassword })
 
-        try {
-
-            const response = await axios.post("http://localhost:3000/api/signup", {
-                name,
-                email,
-                password,
-                confirmPassword
-            })
-
-            console.log(response);
-            localStorage.setItem("Token", response.data.token);
-
-            setName("");
-            setEmail("");
-            setPassword("");
-            setConfirmPassword("");
-
-            toast.success(response.data.message);
-            navigate("/profile");
-            window.location.reload();
-
-        } catch (error) {
-
-            if (error.response.data && error.response.data.message) {
-                toast.error(error.response.data.message)
-            } else {
-                toast.error("Some Error occured during Signup Process. Try again ....")
-                console.log("Error", error);
-            }
-        }
     }
 
     return (

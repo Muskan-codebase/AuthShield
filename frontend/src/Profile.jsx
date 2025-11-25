@@ -8,11 +8,13 @@ import profileIcon from "./assets/profile-icon.webp";
 import EditProfile from './EditProfile';
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios"
+import useFetchUserProfile from './custom-hooks/useFetchUserProfile';
 
 function Profile() {
 
   const [user, setUser] = useState();
   const navigate = useNavigate();
+  const { fetchUserProfile } = useFetchUserProfile();
 
   const userLogout = () => {
     localStorage.removeItem("Token");
@@ -22,30 +24,30 @@ function Profile() {
 
   useEffect(() => {
 
-    const fetchData = async () => {
+    // const fetchData = async () => {
 
-      const userToken = localStorage.getItem("Token");
-      console.log(userToken)
+    //   const userToken = localStorage.getItem("Token");
+    //   console.log(userToken)
 
-      try {
+    //   try {
 
-        const response = await axios.get("http://localhost:3000/api/getUserProfile", {
-          headers: {
-            "Authorization": `Bearer ${userToken}`,
-          }
-        });
+    //     const response = await axios.get("http://localhost:3000/api/getUserProfile", {
+    //       headers: {
+    //         "Authorization": `Bearer ${userToken}`,
+    //       }
+    //     });
 
-        console.log(response.data.user);
-        setUser(response.data.user)
+    //     console.log(response.data.user);
+    //     setUser(response.data.user)
 
-      } catch (err) {
+    //   } catch (err) {
 
-        console.log("Error", err);
-      }
+    //     console.log("Error", err);
+    //   }
 
-    }
+    // }
 
-    fetchData()
+    fetchUserProfile(setUser)
 
   }, [])
 

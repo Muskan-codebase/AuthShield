@@ -6,6 +6,7 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios"
+import useResetPassword from './custom-hooks/useResetPassword';
 
 function ResetPassword() {
     const [email, setEmail] = useState();
@@ -14,6 +15,7 @@ function ResetPassword() {
     const [showNewPassword, setShowNewPassword] = useState(false);
     const [showConfirmNewPassword, setShowConfirmNewPassword] = useState(false);
     const navigate = useNavigate();
+    const { resetPassword } = useResetPassword();
 
 
     const handlePasswordChange = function () {
@@ -36,34 +38,39 @@ function ResetPassword() {
         setConfirmNewPassword(e.target.value)
     }
 
-    const resetPassword = async function (e) {
+    const handleResetPassword = async function (e) {
 
         e.preventDefault();
+        resetPassword({ email, newPassword, confirmNewPassword });
 
-        try {
+        setEmail("");
+        setNewPassword("");
+        setConfirmNewPassword("");
 
-            const response = await axios.post("http://localhost:3000/api/resetPassword", {
-                email,
-                newPassword,
-                confirmNewPassword
-            })
+        // try {
 
-            if (response) {
+        //     const response = await axios.post("http://localhost:3000/api/resetPassword", {
+        //         email,
+        //         newPassword,
+        //         confirmNewPassword
+        //     })
 
-                toast.success(response.data.message)
-                navigate("/login")
-                window.location.reload();
-            }
+        //     if (response) {
 
-        } catch (error) {
+        //         toast.success(response.data.message)
+        //         navigate("/login")
+        //         window.location.reload();
+        //     }
 
-            if (error.response.data && error.response.data.message) {
-                toast.error(error.response.data.message)
-            } else {
-                toast.error("Some Error occured during Signup Process. Try again ....")
-                console.log("Error", error);
-            }
-        }
+        // } catch (error) {
+
+        //     if (error.response.data && error.response.data.message) {
+        //         toast.error(error.response.data.message)
+        //     } else {
+        //         toast.error("Some Error occured during Signup Process. Try again ....")
+        //         console.log("Error", error);
+        //     }
+        // }
     }
 
     return (
@@ -82,7 +89,7 @@ function ResetPassword() {
                 padding: "50px"
             }} className='flex justify-center items-center'>
 
-                <form onSubmit={resetPassword} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-4'>
+                <form onSubmit={handleResetPassword} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-4'>
                     <h1 className='text-center text-2xl font-bold text-blue-700'>Reset Password</h1>
 
                     <label className='text-lg'>Email</label><br></br>

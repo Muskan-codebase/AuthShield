@@ -3,43 +3,46 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios"
+import useForgotPassword from './custom-hooks/useForgotPassword';
 
 function Email() {
 
     const [email, setEmail] = useState();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
+    const { forgotPassword } = useForgotPassword();
 
     const updateEmail = (e) => {
         setEmail(e.target.value);
     }
 
-    const forgotPassword = async (e) => {
+    const handleForgotPassword = async (e) => {
 
         e.preventDefault();
+        forgotPassword({ email });
 
-        try {
+        // try {
 
-            const response = await axios.post("http://localhost:3000/api/forgotPassword", {
-                email
-            })
+        //     const response = await axios.post("http://localhost:3000/api/forgotPassword", {
+        //         email
+        //     })
 
-            if (response) {
+        //     if (response) {
 
-                toast.success(response.data.message)
-                navigate("/verifyOTP")
-                window.location.reload();
-            }
+        //         toast.success(response.data.message)
+        //         navigate("/verifyOTP")
+        //         window.location.reload();
+        //     }
 
-        } catch (error) {
+        // } catch (error) {
 
-            if (error.response.data && error.response.data.message) {
-                toast.error(error.response.data.message)
-            } else {
-                toast.error("Some Error occured during Signup Process. Try again ....")
-                console.log("Error", error);
-            }
+        //     if (error.response.data && error.response.data.message) {
+        //         toast.error(error.response.data.message)
+        //     } else {
+        //         toast.error("Some Error occured during Signup Process. Try again ....")
+        //         console.log("Error", error);
+        //     }
 
-        }
+        // }
     }
 
     return (
@@ -58,7 +61,7 @@ function Email() {
                 padding: "50px"
             }} className='flex justify-center items-center'>
 
-                <form onSubmit={forgotPassword} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-4'>
+                <form onSubmit={handleForgotPassword} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-4'>
                     <h1 className='text-center text-2xl font-bold text-blue-700'>Enter Your Email to Receive OTP</h1>
 
                     <label className='text-xl'>Email</label><br></br>

@@ -5,13 +5,15 @@ import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios"
+import useLogin from './custom-hooks/useLogin';
 
 function Login() {
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [showPassword, setShowPassword] = useState(false);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
+    const { login } = useLogin();
 
     const handlePasswordChange = function () {
         setShowPassword(!showPassword)
@@ -28,29 +30,30 @@ function Login() {
     const userLogin = async (e) => {
 
         e.preventDefault();
+        login({ email, password });
 
-        try {
+        // try {
 
-            const response = await axios.post("http://localhost:3000/api/login", {
-                email,
-                password
-            });
+        //     const response = await axios.post("http://localhost:3000/api/login", {
+        //         email,
+        //         password
+        //     });
 
-            localStorage.setItem("Token", response.data.token);
+        //     localStorage.setItem("Token", response.data.token);
 
-            toast.success(response.data.message);
-            navigate("/profile");
-            window.location.reload();
+        //     toast.success(response.data.message);
+        //     navigate("/profile");
+        //     window.location.reload();
 
-        } catch (error) {
+        // } catch (error) {
 
-            if (error.response.data && error.response.data.message) {
-                toast.error(error.response.data.message)
-            } else {
-                toast.error("Some Error occured during Signup Process. Try again ....")
-                console.log("Error", error);
-            }
-        }
+        //     if (error.response.data && error.response.data.message) {
+        //         toast.error(error.response.data.message)
+        //     } else {
+        //         toast.error("Some Error occured during Signup Process. Try again ....")
+        //         console.log("Error", error);
+        //     }
+        // }
     }
 
     return (

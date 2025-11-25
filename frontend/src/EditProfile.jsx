@@ -2,51 +2,54 @@ import React from 'react'
 import axios from "axios"
 import toast, { Toaster } from "react-hot-toast";
 import { useState } from 'react'
+import useEditProfile from './custom-hooks/useEditProfile';
 
 function EditProfile() {
 
     const [file, setFile] = useState();
+    const { editProfile } = useEditProfile();
 
     const updateFile = (e) => {
         setFile(e.target.files[0]);
     }
 
-    const editProfile = async (e) => {
+    const handleEditProfile = async (e) => {
 
         e.preventDefault();
+        editProfile(file);
 
-        const token = localStorage.getItem("Token");
-        const formData = new FormData();
+        // const token = localStorage.getItem("Token");
+        // const formData = new FormData();
 
-        if (file) {
-            formData.append("profilePicture", file)
-        }
+        // if (file) {
+        //     formData.append("profilePicture", file)
+        // }
 
-        try {
+        // try {
 
-            const response = await axios.put("http://localhost:3000/api/uploadImage",
-                formData,
-                {
-                    headers: {
-                        "Authorization": `Bearer ${token}`,
-                        "Content-Type": "multipart/form-data"
-                    }
-                }
-            )
+        //     const response = await axios.put("http://localhost:3000/api/uploadImage",
+        //         formData,
+        //         {
+        //             headers: {
+        //                 "Authorization": `Bearer ${token}`,
+        //                 "Content-Type": "multipart/form-data"
+        //             }
+        //         }
+        //     )
 
-            console.log("Updated Profile", response.data);
-            toast.success(response.data.message);
-            window.location.reload();
+        //     console.log("Updated Profile", response.data);
+        //     toast.success(response.data.message);
+        //     window.location.reload();
 
-        } catch (error) {
+        // } catch (error) {
 
-            if (error.response.data && error.response.data.message) {
-                toast.error(error.response.data.message)
-            } else {
-                toast.error("Some Error occured during Signup Process. Try again ....")
-                console.log("Error", error);
-            }
-        }
+        //     if (error.response.data && error.response.data.message) {
+        //         toast.error(error.response.data.message)
+        //     } else {
+        //         toast.error("Some Error occured during Signup Process. Try again ....")
+        //         console.log("Error", error);
+        //     }
+        // }
     }
 
     return (
@@ -56,7 +59,7 @@ function EditProfile() {
                     <form method="dialog">
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                     </form>
-                    <form onSubmit={editProfile} className='space-y-2'>
+                    <form onSubmit={handleEditProfile} className='space-y-2'>
                         <h3 className="font-bold text-2xl text-center">Edit your Profile</h3>
                         <br></br>
                         <label className='text-lg'>Photo</label><br></br>
