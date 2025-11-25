@@ -6,7 +6,6 @@ const { rateLimiter } = require("./rate-limiter/rateLimiter")
 const googleOAuthRoute = require("./routes/google.OAuth.route")
 const cors = require("cors");
 const helmet = require("helmet");
-const mongoSanitize = require("express-mongo-sanitize")
 require("./config")
 
 app.use(cors({
@@ -21,15 +20,6 @@ app.use(express.json())
 // Helmet is a built-in middleware to add security-related HTTP headers
 // Protects against XSS, clickjacking, MIME type sniffing, and other attacks
 app.use(helmet())
-
-//express-mongo-sanitize is a built-in middleware to prevent NoSQL injection attacks.
-//filters out MongoDB operators from inputs/client requests data.
-app.use((req, res, next) => {
-  if (req.body) {
-    mongoSanitize.sanitize(req.body);
-  }
-  next();
-})
 
 //middleware to block API request after certain attempts within a specified time frame (15 mins)
 app.use(rateLimiter)
