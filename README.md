@@ -34,6 +34,13 @@ multiple layers of protection against <b>brute-force attacks</b>, <b>XSS</b>, an
 </ol>
 
 <h2>🛡️ Security Implementations</h2>
+<ol>
+  <li><b>🔐 JWT Authentication & Authorization </b> – Ensures only authenticated users access protected routes</li>
+  <li><b>🧹 Input Sanitization</b> - Implemented sanitize-html library to sanitize user inputs to protect against XSS attacks.</li>
+  <li><b>⚡ Helmet</b> – Sets secure HTTP headers</li>
+  <li><b>🛑 Rate Limiting</b> – Implemented Rate Limiting on APIs particularly Signup & Login APIs to prevent spam registration, brute force login attempts, and API abuse</li>
+  <li><b>🔒 Password Hashing</b> - Implemented bcrypt library for secure user passwords in the database</li>
+</ol>
 
 <h2>🛠 Tech Stack</h2>
 <ul>
