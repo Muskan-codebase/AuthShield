@@ -10,12 +10,14 @@ import toast, { Toaster } from "react-hot-toast";
 import axios from "axios"
 import useFetchUserProfile from './custom-hooks/useFetchUserProfile';
 import { RiErrorWarningLine } from "react-icons/ri";
+import useDeleteAccount from './custom-hooks/useDeleteAccount';
 
 function Profile() {
 
   const [user, setUser] = useState();
   const navigate = useNavigate();
   const { fetchUserProfile } = useFetchUserProfile();
+  const { deleteAccount } = useDeleteAccount()
 
   const userLogout = () => {
     localStorage.removeItem("Token");
@@ -83,6 +85,12 @@ function Profile() {
 
   }
 
+  const handleDeleteAccount = () => {
+
+    deleteAccount();
+
+  }
+
   return (
     <>
       <div className='flex itmes-center justify-center pb-20'>
@@ -135,7 +143,7 @@ function Profile() {
           <p className="text-center text-lg">
             <span className='font-semibold text-2xl'>Are you sure you want to delete your account?</span><br></br>
             This action is permanent and cannot be undone.</p>
-          <button className='w-full bg-red-600 text-white text-lg text-center p-2 mt-5 rounded-md hover:bg-red-500 cursor-pointer active:bg-red-700'>Delete my account</button>
+          <button onClick={handleDeleteAccount} className='w-full bg-red-600 text-white text-lg text-center p-2 mt-5 rounded-md hover:bg-red-500 cursor-pointer active:bg-red-700'>Delete my account</button>
         </div>
       </dialog>
 
