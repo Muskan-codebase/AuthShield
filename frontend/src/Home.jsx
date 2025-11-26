@@ -2,9 +2,10 @@ import React from 'react'
 import { FaShieldAlt } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Shield from "./assets/shield.png";
 
 function Home() {
-    
+
     return (
         <div style={{
             backgroundImage: "url('/src/assets/blue-bg.jpg')",
@@ -19,10 +20,15 @@ function Home() {
             flexDirection: "column",
             padding: "50px"
         }}>
-            <h1 className='flex justify-center items-center text-7xl text-center font-bold text-white text-shadow-black text-shadow-lg'>
-                <FaShieldAlt className='text-9xl text-white text-shadow-lg text-shadow-black space-x-2' /> Welcome to AuthShield</h1>
-            <p className='text-center text-white font-semibold text-2xl italic'>
-                AuthShield is a modern authentication system built using the MERN stack.
+            <h1 className='text-5xl text-white font-bold text-center'>
+                <span className='title-1'>Welcome to</span>
+                <span className='text-9xl flex items-center justify-center title-2'>
+                    <img src={`${Shield}`} className='h-32 w-32'></img>
+                    AuthShield
+                </span><br></br>
+            </h1>
+            <p className='text-center text-white text-2xl ps-15 pe-15 para'>
+                AuthShield is a modern authentication system built using the MERN stack.<br></br>
                 It ensures your users’ data is protected with secure login, OTP verification,
                 profile image uploads, and protection against attacks. Explore the system and
                 see how security meets usability in a real web app.
