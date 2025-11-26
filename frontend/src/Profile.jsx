@@ -11,6 +11,7 @@ import axios from "axios"
 import useFetchUserProfile from './custom-hooks/useFetchUserProfile';
 import { RiErrorWarningLine } from "react-icons/ri";
 import useDeleteAccount from './custom-hooks/useDeleteAccount';
+import useRemoveProfilePic from './custom-hooks/useRemoveProfilePic';
 
 function Profile() {
 
@@ -18,6 +19,7 @@ function Profile() {
   const navigate = useNavigate();
   const { fetchUserProfile } = useFetchUserProfile();
   const { deleteAccount } = useDeleteAccount()
+  const { removeProfilePic } = useRemoveProfilePic();
 
   const userLogout = () => {
     localStorage.removeItem("Token");
@@ -27,61 +29,13 @@ function Profile() {
 
   useEffect(() => {
 
-    // const fetchData = async () => {
-
-    //   const userToken = localStorage.getItem("Token");
-    //   console.log(userToken)
-
-    //   try {
-
-    //     const response = await axios.get("http://localhost:3000/api/getUserProfile", {
-    //       headers: {
-    //         "Authorization": `Bearer ${userToken}`,
-    //       }
-    //     });
-
-    //     console.log(response.data.user);
-    //     setUser(response.data.user)
-
-    //   } catch (err) {
-
-    //     console.log("Error", err);
-    //   }
-
-    // }
-
     fetchUserProfile(setUser)
 
   }, [])
 
-  const removeProfilePic = async () => {
+  const handleRemoveProfilePic = () => {
 
-    const token = localStorage.getItem("Token");
-
-    try {
-
-      const response = await axios.delete("http://localhost:3000/api/removeProfilePic", {
-        headers: {
-          "Authorization": `Bearer ${token}`,
-          "Content-Type": "Application/json"
-        }
-      })
-
-      console.log(response.data);
-      toast.success(response.data.message);
-      window.location.reload();
-
-
-    } catch (error) {
-
-      if (error.response.data && error.response.data.message) {
-        toast.error(error.response.data.message)
-      } else {
-        toast.error("Some Error occured during Signup Process. Try again ....")
-        console.log("Error", error);
-      }
-
-    }
+    removeProfilePic();
 
   }
 
@@ -112,7 +66,7 @@ function Profile() {
 
           <div className='space-y-4'>
             <button onClick={() => document.getElementById('my_modal_3').showModal()} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer'><MdEditSquare />Edit profile</button>
-            <button onClick={removeProfilePic} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer'>Remove Photo</button>
+            <button onClick={handleRemoveProfilePic} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer'>Remove Photo</button>
             <button onClick={userLogout} className='flex items-center justify-center bg-red-600 border-none p-2 w-full text-white text-md rounded  hover:bg-red-500 cursor-pointer'><RiLogoutCircleLine />Logout</button>
             <button onClick={() => document.getElementById('my_modal_4').showModal()} className='flex items-center justify-center bg-red-600 border-none p-2 w-full text-white text-md rounded  hover:bg-red-500 cursor-pointer'><RiDeleteBin5Fill />Delete Account</button>
           </div>
@@ -133,7 +87,6 @@ function Profile() {
       <dialog id="my_modal_4" className="modal">
         <div className="modal-box">
           <form method="dialog">
-            {/* if there is a button in form, it will close the modal */}
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
           </form>
           <h1 className="font-bold text-3xl text-center text-red-600">Delete Account</h1>
