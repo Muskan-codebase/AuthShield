@@ -63,8 +63,12 @@ const login = async (req, res) => {
         const user = await Users.findOne({ email })
         const passwordMatch = await bcrypt.compare(password, user.password)
 
+        if (!user) {
+            return res.status(400).json({ message: "Invalid credentials!" })
+        }
+
         if (!passwordMatch) {
-            return res.status(400).json({ message: "Password did not match! try again ..." })
+            return res.status(400).json({ message: "Incorrect Password! try again ..." })
         }
 
         const token = createJWT({ userId: user._id, email: user.email })
@@ -82,6 +86,10 @@ const sendOTP = async (req, res) => {
     try {
 
         const { email } = req.body;
+
+        if (!email) {
+            return res.status(400).json({ message: "Enter your Email!" })
+        }
 
         const user = await Users.findOne({ email });
 
@@ -108,6 +116,14 @@ const sendOTP = async (req, res) => {
 }
 
 const verifyOTP = async (req, res) => {
+
+    if (!email) {
+        return res.status(400).json({ message: "Enter your Email!" })
+    }
+
+    if (!otp) {
+        return res.status(400).json({ message: "Enter OTP" })
+    }
 
     try {
 
@@ -141,6 +157,10 @@ const resetPassword = async (req, res) => {
     try {
 
         const { email, newPassword, confirmNewPassword } = req.body;
+
+        if (!email || !newPassword || !confirmNewPassword) {
+            return res.status(400).json({ message: "Enter the mandatory fields to reset password" })
+        }
 
         const user = await Users.findOne({ email });
         if (!user) {
