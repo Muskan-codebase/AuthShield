@@ -17,7 +17,7 @@ function Header() {
 
   return (
     <div>
-      <nav className='bg-slate-900 p-2 shadow-black'>
+      <nav className='bg-neutral p-2 shadow-black'>
         <ul className='flex items-center space-x-10 text-lg text-white'>
           {userToken ?
 

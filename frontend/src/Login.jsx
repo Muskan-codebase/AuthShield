@@ -5,6 +5,7 @@ import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios"
+import { ToastContainer, Bounce } from 'react-toastify';
 import useLogin from './custom-hooks/useLogin';
 
 function Login() {
@@ -64,7 +65,7 @@ function Login() {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundAttachment: "fixed",
-                minHeight: "100vh",
+                minHeight: "91vh",
                 // display: "flex",
                 // justifyContent: "center",
                 // alignItems: "center",
@@ -72,7 +73,7 @@ function Login() {
                 // padding: "50px"
             }} className='flex justify-center items-center'>
 
-                <form onSubmit={userLogin} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-4'>
+                <form onSubmit={userLogin} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-7 h-auto w-110 space-y-4'>
                     <h1 className='text-center text-5xl font-semibold text-blue-700'>Login</h1>
 
                     <label className='text-lg'>Email</label><br></br>
@@ -108,9 +109,23 @@ function Login() {
                 </form>
             </div>
 
-            <Toaster
+            {/* <Toaster
                 position="top-center"
                 reverseOrder={false}
+            /> */}
+
+            <ToastContainer
+                position="top-center"
+                autoClose={2000}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+                transition={Bounce}
             />
         </>
     )

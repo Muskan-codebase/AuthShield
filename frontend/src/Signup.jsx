@@ -89,11 +89,11 @@ function Signup() {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundAttachment: "fixed",
-                minHeight: "100vh"
+                minHeight: "91vh"
             }} className='flex justify-center items-center'>
 
-                <form onSubmit={userSignup} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-2'>
-                    <h1 className='text-center text-3xl font-bold text-blue-700'>Signup</h1>
+                <form onSubmit={userSignup} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-7 h-auto w-110 space-y-2'>
+                    <h1 className='text-center text-5xl font-semibold text-blue-700'>Signup</h1>
 
                     <label className='text-lg'>Name</label><br></br>
                     <input type="text" value={name} onChange={updateName} placeholder="fullname" className="input w-full" />
@@ -133,7 +133,7 @@ function Signup() {
                         }
                     </div>
 
-                    <button className='text-lg p-2 mt-2 w-full bg-blue-600 text-white rounded hover:bg-blue-500 cursor-pointer active:bg-blue-700'>Sign up</button>
+                    <button className='text-lg p-2 mt-5 mb-5 w-full bg-blue-600 text-white rounded hover:bg-blue-500 cursor-pointer active:bg-blue-700'>Sign up</button>
                     {/* Google Sign-In container */}
                     <div id="googleSignIn">
                         <button type="button" className='flex items-center justify-center border-2 border-black text-lg p-2 w-full bg-white text-black rounded cursor-pointer'><FcGoogle /> Sign in with Google</button>
