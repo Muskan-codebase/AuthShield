@@ -84,7 +84,7 @@ function Signup() {
     return (
         <>
             <div style={{
-                backgroundImage: "url('/src/assets/blue-bg.jpg')",
+                backgroundImage: "url('/src/assets/blue-bg.avif')",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",

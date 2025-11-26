@@ -8,7 +8,7 @@ function Home() {
 
     return (
         <div style={{
-            backgroundImage: "url('/src/assets/blue-bg.jpg')",
+            backgroundImage: "url('/src/assets/blue-bg.avif')",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
@@ -35,7 +35,7 @@ function Home() {
             </p>
 
             <div className='mt-20'>
-                <button className='flex justify-center items-center bg-white rounded-2xl border-none text-lg text-black p-4'>
+                <button className='flex justify-center items-center bg-amber-400 w-50 cursor-pointer rounded-2xl border-none text-lg text-black p-4 hover:bg-amber-300 active:bg-amber-500'>
                     <Link to="/signup">get started</Link>
                     <FaArrowRight className='ms-2' /></button>
             </div>
