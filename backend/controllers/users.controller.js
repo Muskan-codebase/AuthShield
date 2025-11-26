@@ -117,17 +117,17 @@ const sendOTP = async (req, res) => {
 
 const verifyOTP = async (req, res) => {
 
-    if (!email) {
-        return res.status(400).json({ message: "Enter your Email!" })
-    }
-
-    if (!otp) {
-        return res.status(400).json({ message: "Enter OTP" })
-    }
-
     try {
 
         const { email, otp } = req.body;
+
+        if (!email) {
+            return res.status(400).json({ message: "Enter your Email!" })
+        }
+
+        if (!otp) {
+            return res.status(400).json({ message: "Enter OTP" })
+        }
 
         const user = await Users.findOne({ email });
 
