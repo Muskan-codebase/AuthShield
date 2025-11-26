@@ -23,9 +23,8 @@ function useDeleteAccount() {
                 console.log(response.data.message);
                 toast.success(response.data.message);
                 localStorage.removeItem("Token")
-                navigate("/");
                 window.location.reload();
-
+                navigate("/");
             }
 
         } catch (error) {
