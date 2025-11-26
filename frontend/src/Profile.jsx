@@ -9,9 +9,10 @@ import EditProfile from './EditProfile';
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios"
 import useFetchUserProfile from './custom-hooks/useFetchUserProfile';
-import { RiErrorWarningLine } from "react-icons/ri";
 import useDeleteAccount from './custom-hooks/useDeleteAccount';
 import useRemoveProfilePic from './custom-hooks/useRemoveProfilePic';
+import DialogModal2 from './popup-modals/DialogModal2';
+import DialogModal3 from './popup-modals/DialogModal3';
 
 function Profile() {
 
@@ -54,7 +55,7 @@ function Profile() {
             <div className="avatar">
               <div className="w-50 h-50 border-blue-800 border-7 rounded-full">
                 {user?.profilePic ?
-                  (<img src={`${user?.profilePic}`} onDoubleClick={() => document.getElementById('my_modal_2').showModal()} className='hover:cursor-pointer'></img>)
+                  (<img src={`${user?.profilePic}`} onDoubleClick={() => document.getElementById('my_modal_3').showModal()} className='hover:cursor-pointer'></img>)
                   :
                   (<img src={profileIcon}></img>)
                 }
@@ -65,41 +66,19 @@ function Profile() {
           <p className='text-2xl'>{user?.email}</p><br></br>
 
           <div className='space-y-4'>
-            <button onClick={() => document.getElementById('my_modal_3').showModal()} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer'><MdEditSquare />Edit profile</button>
+            <button onClick={() => document.getElementById('my_modal_1').showModal()} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer'><MdEditSquare />Edit profile</button>
             <button onClick={handleRemoveProfilePic} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer'>Remove Photo</button>
             <button onClick={userLogout} className='flex items-center justify-center bg-red-600 border-none p-2 w-full text-white text-md rounded  hover:bg-red-500 cursor-pointer'><RiLogoutCircleLine />Logout</button>
-            <button onClick={() => document.getElementById('my_modal_4').showModal()} className='flex items-center justify-center bg-red-600 border-none p-2 w-full text-white text-md rounded  hover:bg-red-500 cursor-pointer'><RiDeleteBin5Fill />Delete Account</button>
+            <button onClick={() => document.getElementById('my_modal_2').showModal()} className='flex items-center justify-center bg-red-600 border-none p-2 w-full text-white text-md rounded  hover:bg-red-500 cursor-pointer'><RiDeleteBin5Fill />Delete Account</button>
           </div>
         </div>
       </div>
 
       <EditProfile></EditProfile>
 
-      <dialog id="my_modal_2" className="modal">
-        <div className="modal-box overflow-y-hidden p-0 h-130 w-130 rounded-full">
-          <img src={`${user?.profilePic}`} className='h-130 w-130 rounded-full'></img>
-        </div>
-        <form method="dialog" className="modal-backdrop">
-          <button>close</button>
-        </form>
-      </dialog >
+      <DialogModal2 props={handleDeleteAccount}></DialogModal2>
 
-      <dialog id="my_modal_4" className="modal">
-        <div className="modal-box">
-          <form method="dialog">
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          </form>
-          <h1 className="font-bold text-3xl text-center text-red-600">Delete Account</h1>
-          <div className='flex items-center justify-center p-2'>
-            <RiErrorWarningLine className='text-7xl text-red-600' />
-          </div>
-          <p className="text-center text-lg">
-            <span className='font-semibold text-2xl'>Are you sure you want to delete your account?</span><br></br>
-            This action is permanent and cannot be undone.</p>
-          <button onClick={handleDeleteAccount} className='w-full bg-red-600 text-white text-lg text-center p-2 mt-5 rounded-md hover:bg-red-500 cursor-pointer active:bg-red-700'>Delete my account</button>
-        </div>
-      </dialog>
-
+      <DialogModal3 props={user?.profilePic}></DialogModal3>
 
       <Toaster
         position="top-center"
