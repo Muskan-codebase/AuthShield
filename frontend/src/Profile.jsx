@@ -114,7 +114,7 @@ function Profile() {
       <EditProfile></EditProfile>
 
       <dialog id="my_modal_2" className="modal">
-        <div className="modal-box overflow-y-hidden w-auto p-0 h-130 w-130 rounded-full">
+        <div className="modal-box overflow-y-hidden p-0 h-130 w-130 rounded-full">
           <img src={`${user?.profilePic}`} className='h-130 w-130 rounded-full'></img>
         </div>
         <form method="dialog" className="modal-backdrop">
