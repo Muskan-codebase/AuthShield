@@ -26,31 +26,6 @@ function VerifyOTP() {
 
         setEmail("")
         setOTP("")
-
-        // try {
-
-        //     const response = await axios.post("http://localhost:3000/api/verifyOTP", {
-        //         email,
-        //         otp
-        //     })
-
-        //     if (response) {
-
-        //         toast.success(response.data.message)
-        //         navigate("/resetPassword")
-        //         window.location.reload();
-        //     }
-
-        // } catch (error) {
-
-        //     if (error.response.data && error.response.data.message) {
-        //         toast.error(error.response.data.message)
-        //     } else {
-        //         toast.error("Some Error occured during Signup Process. Try again ....")
-        //         console.log("Error", error);
-        //     }
-
-        // }
     }
 
     return (

@@ -8,7 +8,6 @@ import useForgotPassword from './custom-hooks/useForgotPassword';
 function Email() {
 
     const [email, setEmail] = useState();
-    // const navigate = useNavigate();
     const { forgotPassword } = useForgotPassword();
 
     const updateEmail = (e) => {
@@ -19,30 +18,6 @@ function Email() {
 
         e.preventDefault();
         forgotPassword({ email });
-
-        // try {
-
-        //     const response = await axios.post("http://localhost:3000/api/forgotPassword", {
-        //         email
-        //     })
-
-        //     if (response) {
-
-        //         toast.success(response.data.message)
-        //         navigate("/verifyOTP")
-        //         window.location.reload();
-        //     }
-
-        // } catch (error) {
-
-        //     if (error.response.data && error.response.data.message) {
-        //         toast.error(error.response.data.message)
-        //     } else {
-        //         toast.error("Some Error occured during Signup Process. Try again ....")
-        //         console.log("Error", error);
-        //     }
-
-        // }
     }
 
     return (

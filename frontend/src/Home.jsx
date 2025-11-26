@@ -4,6 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Home() {
+    
     return (
         <div style={{
             backgroundImage: "url('/src/assets/blue-bg.jpg')",
