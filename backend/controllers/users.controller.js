@@ -252,6 +252,27 @@ const removeProfilePic = async (req, res) => {
     }
 }
 
+const deleteUser = async (req, res) => {
+
+    try {
+
+        const { userId } = req.user;
+
+        const user = await Users.findByIdAndDelete(userId);
+
+        if (!user) {
+            return res.status(400).json({ message: "User does not exists!" })
+        }
+
+        if (user) {
+            return res.status(200).json({ message: "Account deleted successfully", user });
+        }
+
+    } catch (err) {
+        res.status(500).json({ message: err })
+    }
+}
+
 module.exports = {
     signup,
     login,
@@ -261,5 +282,6 @@ module.exports = {
     getUserProfile,
     uploadProfilePic,
     removeProfilePic,
+    deleteUser
 }
 
