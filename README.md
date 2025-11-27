@@ -61,9 +61,9 @@
 <hr>
 
 <h3>API Documentation</h3>
-<h4>User Authentication</h4>
+<h3>User Authentication</h3>
 
-1. Signup
+<h4>1. Signup</h4>
 <p><b>Method</b>: POST</p>
 <p><b>URL</b>: localhost:3000/api/signup</p>
 <p><b>Request body</b></p>
