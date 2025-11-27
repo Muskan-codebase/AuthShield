@@ -181,7 +181,7 @@
 <h3>User Profile Management</h3>
 
 <h4>1. User Profile</h4>
-<p><b>Method</b>: POST</p>
+<p><b>Method</b>: GET</p>
 <p><b>URL</b>: localhost:3000/api/getUserProfile</p>
 <p><b>Authorization</b>: Bearer < generated_token ></p>
 <p><b>Response body:</b></p>
