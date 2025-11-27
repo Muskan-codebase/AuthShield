@@ -1,36 +1,49 @@
 <h2>🛡AuthShield — Complete Authentication & Security System</h2>
-<b>AuthShield</b> is a full-stack authentication system built with Node.js, Express, React and MongoDB, with a strong emphasis on security and real-world authentication flows.
-This project implements <b>JWT authentication</b>, <b>Google OAuth</b>, <b>OTP-verification and password reset using Nodemailer</b>, <b>profile uploads</b>, and 
-multiple layers of protection against <b>brute-force attacks</b>, <b>XSS</b>, and <b>NoSQL injection</b>.
+<p>
+  <b>AuthShield</b> is a production-ready full-stack authentication system built with
+  <b>Node.js</b>, <b>Express</b>, <b>React</b>, and <b>MongoDB</b>, designed with a strong focus on
+  security, reliability, and modern authentication practices.
+</p>
+<p>
+  It includes secure <b>JWT-based authentication</b>, seamless <b>Google OAuth 2.0</b>
+  integration, <b>OTP-driven password reset</b> using Nodemailer, and
+  <b>Cloudinary-powered profile uploads</b>, providing a complete and scalable user
+  management system.
+</p>
+<p>
+  AuthShield is reinforced with multiple layers of protection such as
+  <b>rate limiting</b>, <b>input sanitization</b>, <b>XSS prevention</b>,
+  <b>NoSQL injection protection</b>, and <b>brute-force attack mitigation</b>,
+  making it suitable for real-world applications and secure production deployments.
+</p>
 
 <h2>🚀 Features</h2>
 <h3>🔑 Authentication</h3>
 <ol>
-  <li>JWT Authentication (JSON Web Token)</li>
-  <li>Secure password hashing (bcrypt)</li>
-  <li>Login, Signup, Logout</li>
-  <li>Protected routes & middleware</li>
+  <li>User Signup and Login implemented with JWT (JSON Web Token) authentication.</li>
+  <li>Passwords securely hashed using bcrypt before storing in the database.</li>
+  <li>Protected routes enforced through authentication middleware for secure access.</li>
 </ol>
 
 <h3>📩 Password Reset (OTP)</h3>
 <ol>
-  <li>OTP generation & expiry</li>
-  <li>Email sending using Nodemailer</li>
-  <li>OTP verification & password update</li>
+  <li>OTP emails sent securely using Nodemailer.</li>
+  <li>Time-bound OTP generation with strict expiry validation.</li>
+  <li>OTP verification required before allowing password reset.</li>
 </ol>
 
 <h3>🖼️ Profile Management</h3>
 <ol>
-  <li>Profile picture upload (Cloudinary)</li>
-  <li>Secure image URLs</li>
-  <li>Update name, email, password, profile image</li>
+  <li>Profile picture upload handled via Cloudinary storage.</li>
+  <li>Secure, optimized image URLs stored and served from the cloud.</li>
+  <li>Update user details including name and profile picture with validation.</li>
 </ol>
 
 <h3>🔐 OAuth Integration</h3>
 <ol>
-  <li>Google OAuth 2.0 implemented using the Google OAuth Library</li>
-  <li>Code exchange → Token verification → User creation/login</li>
-  <li>Works without Passport.js</li>
+   <li>Google OAuth 2.0 implemented using the official Google OAuth Client Library for a secure and reliable authentication flow.</li>
+  <li>Frontend sends an authorization code → Backend exchanges it for tokens → Verifies ID token → Creates or logs in the user.</li>
+  <li>Fully custom OAuth flow implemented without Passport.js, providing complete control over user handling and token management.</li>
 </ol>
 
 <h2>🛡️ Security Implementations</h2>
