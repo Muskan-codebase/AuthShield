@@ -132,7 +132,7 @@ const verifyOTP = async (req, res) => {
         const user = await Users.findOne({ email });
 
         if (!user) {
-            return res.json({ message: "User noty found!" })
+            return res.json({ message: "User not found!" })
         }
 
         if (user.otp !== otp) {
@@ -181,11 +181,8 @@ const resetPassword = async (req, res) => {
         user.otp = undefined;
         user.otpExpiry = undefined;
 
-        const userData = await user.save();
-
-        if (userData) {
-            return res.status(200).json({ message: "Password reset successfull", userData })
-        }
+        await user.save();
+        res.status(200).json({ message: "Password reset successfully", user })
 
     } catch (err) {
         res.status(500).json({ message: err })
