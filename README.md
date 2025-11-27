@@ -90,3 +90,52 @@
     },
     "token": generated_token
 }</pre>
+
+<h4>2. Login</h4>
+<p><b>Method</b>: POST</p>
+<p><b>URL</b>: localhost:3000/api/login</p>
+<p><b>Request body</b></p>
+<pre>
+{
+    "email": "johndoe@gmail.com",
+    "password": "john12345"
+}
+</pre>
+<br>
+<p><b>Response body:</b></p>
+<pre>
+{
+    "message": "User logged in successfully",
+    "user": {
+        "_id": "692808b78c95e4e069f4a1b9",
+        "name": "John Doe",
+        "email": "johndoe@gmail.com",
+        "password": hashed_password,
+        "createdAt": "2025-11-27T07:07:32.058Z",
+        "__v": 0
+    },
+    "token": generated_token
+}
+</pre>
+
+<h4>3. Forgot Password (Send OTP via Email)</h4>
+<p><b>Method</b>: POST</p>
+<p><b>URL</b>: localhost:3000/api/forgotPassword</p>
+<p><b>Request body</b></p>
+<pre>
+{
+    "email": "johndoe@gmail.com"
+}
+</pre>
+<br>
+<p><b>Response body:</b></p>
+<pre>
+{
+    "message": "OTP sent successfully to your email",
+    "otpExpiry": "2025-11-27T07:37:32.058Z"
+}
+</pre>
+
+
+
+
