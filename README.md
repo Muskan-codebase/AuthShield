@@ -44,8 +44,8 @@
   <li><b>Frontend</b>: React.js, Tailwind CSS, Daisy UI.</li>
   <li><b>Backend</b>: Node.js, Express.js.</li>
   <li><b>Database</b>: MongoDB.</li>
-  <li><b>Security Libraries</b>: bcrypt, express-rate-limit, express-mongo-sanitize, helmet.</li>
-  <li><b>Third-Party Integration</b>: Cloudinary, Nodemailer, Google OAuth 2.0</li>
+  <li><b>Security</b>: bcrypt, express-rate-limit, sanitize-html, helmet.</li>
+  <li><b>Other</b>: Cloudinary, Nodemailer, Google OAuth 2.0</li>
 </ul>
 
 <h2>📝 What I Learned</h2>
