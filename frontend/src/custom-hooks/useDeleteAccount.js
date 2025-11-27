@@ -22,10 +22,12 @@ function useDeleteAccount() {
 
                 console.log(response.data.message);
                 toast.success(response.data.message);
-                localStorage.removeItem("Token")
-                window.location.reload();
-                navigate("/");
+                // localStorage.removeItem("Token")
             }
+
+            // window.location.reload();
+            localStorage.removeItem("Token")
+            navigate("/");
 
         } catch (error) {
 

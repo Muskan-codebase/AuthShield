@@ -20,9 +20,13 @@ const useSignup = () => {
             console.log(response);
             localStorage.setItem("Token", response.data.token);
 
-            toast.success(response.data.message);
+            if (response) {
+
+                toast.success(response.data.message);
+            }
+
             navigate("/profile");
-            window.location.reload();
+            // window.location.reload();
 
         } catch (error) {
 

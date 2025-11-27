@@ -17,9 +17,11 @@ function useForgotPassword() {
             if (response) {
 
                 toast.success(response.data.message)
-                navigate("/verifyOTP")
-                window.location.reload();
+                // window.location.reload();
             }
+
+            navigate("/verifyOTP")
+
 
         } catch (error) {
 

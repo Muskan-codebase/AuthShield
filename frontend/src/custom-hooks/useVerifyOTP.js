@@ -18,9 +18,11 @@ const useVerifyOTP = () => {
             if (response) {
 
                 toast.success(response.data.message)
-                navigate("/resetPassword")
-                window.location.reload();
+                // window.location.reload();
             }
+
+            navigate("/resetPassword")
+
 
         } catch (error) {
 

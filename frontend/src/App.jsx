@@ -9,11 +9,17 @@ import VerifyOTP from "./VerifyOTP"
 import ResetPassword from "./ResetPassword"
 import Profile from "./Profile"
 import ProtectedRoute from "./protected-route/ProtectedRoute"
+import toast, { Toaster } from "react-hot-toast";
+
 
 function App() {
 
   return (
     <>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home />} />

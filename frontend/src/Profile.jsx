@@ -24,8 +24,9 @@ function Profile() {
 
   const userLogout = () => {
     localStorage.removeItem("Token");
+    toast.success("Logging out");
     navigate("/login");
-    window.location.remove();
+    window.location.reload();
   }
 
   useEffect(() => {
@@ -80,10 +81,10 @@ function Profile() {
 
       <DialogModal3 props={user?.profilePic}></DialogModal3>
 
-      <Toaster
+      {/* <Toaster
         position="top-center"
         reverseOrder={false}
-      />
+      /> */}
 
     </>
   )

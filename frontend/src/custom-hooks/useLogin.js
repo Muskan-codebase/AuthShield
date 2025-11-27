@@ -1,4 +1,5 @@
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
+import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -17,9 +18,13 @@ function useLogin() {
 
             localStorage.setItem("Token", response.data.token);
 
-            toast.success(response.data.message);
+            if (response) {
+
+                toast.success(response.data.message);
+            }
+
             navigate("/profile");
-            window.location.reload();
+            // window.location.reload();
 
         } catch (error) {
 

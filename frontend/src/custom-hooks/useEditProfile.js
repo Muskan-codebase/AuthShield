@@ -26,7 +26,12 @@ function useEditProfile() {
             )
 
             console.log("Updated Profile", response.data);
-            toast.success(response.data.message);
+
+            if (response) {
+
+                toast.success(response.data.message);
+            }
+
             window.location.reload();
 
         } catch (error) {

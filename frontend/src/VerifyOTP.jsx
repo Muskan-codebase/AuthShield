@@ -59,10 +59,10 @@ function VerifyOTP() {
                 </form>
             </div>
 
-            <Toaster
+            {/* <Toaster
                 position="top-center"
                 reverseOrder={false}
-            />
+            /> */}
         </>
     )
 }

@@ -17,7 +17,13 @@ function useRemoveProfilePic() {
             })
 
             console.log(response.data);
-            toast.success(response.data.message);
+
+            if (response) {
+
+                toast.success(response.data.message);
+
+            }
+
             window.location.reload();
 
 

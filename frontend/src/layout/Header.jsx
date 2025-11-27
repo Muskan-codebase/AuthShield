@@ -10,8 +10,9 @@ function Header() {
   const userLogout = () => {
 
     localStorage.removeItem("Token");
+    toast.success("Logging out");
     navigate("/login");
-    window.location.reload();
+    window.location.remove();
 
   }
 

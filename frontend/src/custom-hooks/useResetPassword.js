@@ -19,9 +19,11 @@ const useResetPassword = function () {
             if (response) {
 
                 toast.success(response.data.message)
-                navigate("/login")
-                window.location.reload();
+                // window.location.reload();
             }
+
+            navigate("/login")
+
 
         } catch (error) {
 
