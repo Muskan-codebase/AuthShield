@@ -53,7 +53,7 @@
   <li>Deep understanding of JWT and token-based authentication</li>
   <li>Implementing Google OAuth 2.0 from scratch</li>
   <li>sending mails and verifying OTP using Nodemailer</li>
-  <li>Preventing real-world attacks: brute-force, XSS, NoSQL injection</li>
+  <li>Preventing real-world attacks: brute-force attacks, XSS, Input Sanitization from malicious code/scripts</li>
   <li>Cloudinary file uploads & storage</li>
   <li>Writing clean, modular, scalable Node.js code</li>
 </ul>
