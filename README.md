@@ -32,11 +32,11 @@
 
 <h2>🛡️ Security Implementations</h2>
 <ol>
-  <li><b>🔐 JWT Authentication & Authorization </b> – Ensures only authenticated users access protected routes</li>
-  <li><b>🧹 Input Sanitization</b> - Implemented sanitize-html library to sanitize user inputs to protect against XSS attacks.</li>
-  <li><b>⚡ Helmet</b> – Sets secure HTTP headers</li>
-  <li><b>🛑 Rate Limiting</b> – Implemented Rate Limiting on APIs particularly Signup & Login APIs to prevent spam registration, brute force login attempts, and API abuse</li>
-  <li><b>🔒 Password Hashing</b> - Implemented bcrypt library for secure user passwords in the database</li>
+  <li><b>🔐 JWT Authentication & Authorization</b> – Ensures only verified users can access protected routes and sensitive operations.</li>
+  <li><b>🧹 Input Sanitization</b> – Uses <code>sanitize-html</code> to prevent XSS, script injections, and malicious HTML payloads.</li>
+  <li><b>⚡ Helmet</b> – Adds secure HTTP headers to protect against common web vulnerabilities and enforce safer browser behavior.</li>
+  <li><b>🛑 Rate Limiting</b> – Applied across critical APIs (Signup, Login etc.) to prevent brute-force attacks, spam registrations, multiple failed login attemtps and API abuse.</li>
+  <li><b>🔒 Password Hashing</b> – All user passwords are securely hashed using <code>bcrypt</code> before being stored in the database.</li>
 </ol>
 
 <h2>🛠 Tech Stack</h2>
