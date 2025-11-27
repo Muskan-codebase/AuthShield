@@ -57,3 +57,36 @@
   <li>Cloudinary file uploads & storage</li>
   <li>Writing clean, modular, scalable Node.js code</li>
 </ul>
+
+<hr>
+
+<h3>API Documentation</h3>
+<h4>User Authentication</h4>
+
+<p><b>Method</b>: POST</p>
+<br>
+<p><b>URL</b>: localhost:3000/api/signup</p>
+<br>
+<p><b>Request body</b></p>
+<br>
+{
+    "name": "John Doe",
+    "email": "johndoe@gmail.com",
+    "password": "john12345",
+    "confirmPassword": "john12345"
+}
+<br>
+<p><b>Response body:</b></p>
+<br>
+{
+    "message": "User signed up successfully",
+    "newUser": {
+        "name": "John Doe",
+        "email": "johndoe@gmail.com",
+        "password": "<hashed_password>",
+        "createdAt": "2025-11-27T07:07:32.058Z",
+        "_id": "692808b78c95e4e069f4a1b9",
+        "__v": 0
+    },
+    "token": "<generated_token>"
+}
