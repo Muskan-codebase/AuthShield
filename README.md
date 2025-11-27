@@ -197,6 +197,48 @@
 }
 </pre>
 
+<h4>2. Profile Photo Upload</h4>
+<p><b>Method</b>: PUT</p>
+<p><b>URL</b>: localhost:3000/api/uploadImage</p>
+<p><b>Authorization</b>: Bearer < generated_token ></p>
+<p><b>Request body:</b></p>
+<p><b>form-data:</b></p>
+<p><b>key</b>: profilePicture [File]</p>
+<p><b>value</b>: img.jpg </p>
+<p><b>Response body:</b></p>
+<pre>
+{
+    "message": "Image uploaded successfully",
+    "user": {
+        "_id": "69289cfc28067b1f6a56ac0b",
+        "name": "John Doe",
+        "email": "dummyuserjd1995@gmail.com",
+        "createdAt": "2025-11-27T17:17:56.922Z",
+        "__v": 0,
+        "profilePic": < cloudinary_image >
+    }
+}
+</pre>
+
+<h4>2. Delete Photo</h4>
+<p><b>Method</b>: DELETE</p>
+<p><b>URL</b>: localhost:3000/api/deleteAccount</p>
+<p><b>Authorization</b>: Bearer < generated_token ></p>
+<p><b>Response body:</b></p>
+<pre>
+{
+    "message": "Account deleted successfully",
+    "user": {
+        "_id": "69289cfc28067b1f6a56ac0b",
+        "name": "John Doe",
+        "email": "dummyuserjd1995@gmail.com",
+        "createdAt": "2025-11-27T17:17:56.922Z",
+        "__v": 0,
+        "profilePic": "< cloudinary_image >"
+    }
+}
+</pre>
+
 
 
 
