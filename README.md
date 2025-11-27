@@ -64,20 +64,19 @@
 <h4>User Authentication</h4>
 
 <p><b>Method</b>: POST</p>
-<br>
 <p><b>URL</b>: localhost:3000/api/signup</p>
-<br>
 <p><b>Request body</b></p>
-<br>
+<pre>
 {
     "name": "John Doe",
     "email": "johndoe@gmail.com",
     "password": "john12345",
     "confirmPassword": "john12345"
 }
+</pre>
 <br>
 <p><b>Response body:</b></p>
-<br>
+<pre>
 {
     "message": "User signed up successfully",
     "newUser": {
@@ -89,4 +88,4 @@
         "__v": 0
     },
     "token": "<generated_token>"
-}
+}</pre>
