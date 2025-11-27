@@ -70,7 +70,7 @@
 <pre>
 {
     "name": "John Doe",
-    "email": "johndoe@gmail.com",
+    "email": "dummyuserjd1995@gmail.com",
     "password": "john12345",
     "confirmPassword": "john12345"
 }
@@ -82,8 +82,7 @@
     "message": "User signed up successfully",
     "newUser": {
         "name": "John Doe",
-        "email": "johndoe@gmail.com",
-        "password": hashed_password,
+        "email": "dummyuserjd1995@gmail.com",
         "createdAt": "2025-11-27T07:07:32.058Z",
         "_id": "692808b78c95e4e069f4a1b9",
         "__v": 0
@@ -97,7 +96,7 @@
 <p><b>Request body</b></p>
 <pre>
 {
-    "email": "johndoe@gmail.com",
+    "email": "dummyuserjd1995@gmail.com",
     "password": "john12345"
 }
 </pre>
@@ -109,8 +108,7 @@
     "user": {
         "_id": "692808b78c95e4e069f4a1b9",
         "name": "John Doe",
-        "email": "johndoe@gmail.com",
-        "password": hashed_password,
+        "email": "dummyuserjd1995@gmail.com",
         "createdAt": "2025-11-27T07:07:32.058Z",
         "__v": 0
     },
@@ -124,17 +122,82 @@
 <p><b>Request body</b></p>
 <pre>
 {
-    "email": "johndoe@gmail.com"
+    "email": "dummyuserjd1995@gmail.com"
 }
 </pre>
 <br>
 <p><b>Response body:</b></p>
 <pre>
 {
-    "message": "OTP sent successfully to your email",
-    "otpExpiry": "2025-11-27T07:37:32.058Z"
+    "message": "OTP sent. Check your email"
 }
 </pre>
+
+<h4>4. Verify OTP</h4>
+<p><b>Method</b>: POST</p>
+<p><b>URL</b>: localhost:3000/api/verifyOTP</p>
+<p><b>Request body</b></p>
+<pre>
+{
+    "email": "dummyuserjd1995@gmail.com",
+    "otp": "967385"
+}
+</pre>
+<br>
+<p><b>Response body:</b></p>
+<pre>
+{
+    "message": "OTP Verified successfully!"
+}
+</pre>
+
+<h4>4. Reset Password</h4>
+<p><b>Method</b>: POST</p>
+<p><b>URL</b>: localhost:3000/api/resetPassword</p>
+<p><b>Request body</b></p>
+<pre>
+{
+    "email": "dummyuserjd1995@gmail.com",
+    "newPassword": "john@12345",
+    "confirmNewPassword": "john@12345"
+}
+</pre>
+<br>
+<p><b>Response body:</b></p>
+<pre>
+{
+    "message": "Password reset successfully",
+    "user": {
+        "_id": "69289cfc28067b1f6a56ac0b",
+        "name": "John Doe",
+        "email": "dummyuserjd1995@gmail.com",
+        "createdAt": "2025-11-27T17:17:56.922Z",
+        "__v": 0
+    }
+}
+</pre>
+
+<hr>
+<h3>User Profile Management</h3>
+
+<h4>1. User Profile</h4>
+<p><b>Method</b>: POST</p>
+<p><b>URL</b>: localhost:3000/api/getUserProfile</p>
+<p><b>Authorization</b>: Bearer < generated_token ></p>
+<p><b>Response body:</b></p>
+<pre>
+{
+    "user": {
+        "_id": "69289cfc28067b1f6a56ac0b",
+        "name": "John Doe",
+        "email": "dummyuserjd1995@gmail.com",
+        "createdAt": "2025-11-27T17:17:56.922Z",
+        "__v": 0
+    }
+}
+</pre>
+
+
 
 
 
