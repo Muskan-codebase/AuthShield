@@ -22,7 +22,7 @@ function Home() {
         }}>
             <h1 className='text-5xl text-white font-bold text-center'>
                 <span className='title-1'>Welcome to</span>
-                <span className='text-9xl flex items-center justify-center title-2'>
+                <span className='text-8xl flex items-center justify-center title-2'>
                     <img src={`${Shield}`} className='h-32 w-32'></img>
                     AuthShield
                 </span><br></br>

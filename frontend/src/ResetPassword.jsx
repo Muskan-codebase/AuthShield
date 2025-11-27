@@ -65,7 +65,7 @@ function ResetPassword() {
                 padding: "50px"
             }} className='flex justify-center items-center'>
 
-                <form onSubmit={handleResetPassword} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-4'>
+                <form onSubmit={handleResetPassword} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-4 hover:scale-105 transition-transform duration-500 ease-in-out cursor-pointer'>
                     <h1 className='text-center text-2xl font-bold text-blue-700'>Reset Password</h1>
 
                     <label className='text-lg'>Email</label><br></br>

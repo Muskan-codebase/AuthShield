@@ -49,7 +49,7 @@ function Profile() {
 
   return (
     <>
-      <div className='flex itmes-center justify-center pb-20'>
+      <div className='flex itmes-center justify-center p-10 pb-50'>
         <div className='border-2 border-gray-300 shadow-2xl shadow-gray-500 w-100 h-auto p-5 rounded-xl text-center mt-5'>
           <h1 className='text-4xl font-semibold text-black'>Profile</h1>
           <div className='flex items-center justify-center mt-5 mb-5'>

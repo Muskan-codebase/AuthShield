@@ -44,7 +44,7 @@ function VerifyOTP() {
                 padding: "50px"
             }} className='flex justify-center items-center'>
 
-                <form onSubmit={handleVerifyOTP} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-4'>
+                <form onSubmit={handleVerifyOTP} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-4 hover:scale-105 transition-transform duration-500 ease-in-out cursor-pointer'>
                     <h1 className='text-center text-4xl font-bold text-blue-700'>Verify OTP</h1>
 
                     <label className='text-xl'>Email</label><br></br>
