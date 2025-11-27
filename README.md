@@ -63,6 +63,7 @@
 <h3>API Documentation</h3>
 <h4>User Authentication</h4>
 
+1. Signup
 <p><b>Method</b>: POST</p>
 <p><b>URL</b>: localhost:3000/api/signup</p>
 <p><b>Request body</b></p>
@@ -82,10 +83,10 @@
     "newUser": {
         "name": "John Doe",
         "email": "johndoe@gmail.com",
-        "password": "<hashed_password>",
+        "password": hashed_password,
         "createdAt": "2025-11-27T07:07:32.058Z",
         "_id": "692808b78c95e4e069f4a1b9",
         "__v": 0
     },
-    "token": "<generated_token>"
+    "token": generated_token
 }</pre>
