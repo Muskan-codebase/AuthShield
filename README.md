@@ -65,7 +65,7 @@
   <li>Fully custom OAuth flow implemented without Passport.js, providing complete control over user handling and token management.</li>
 </ol>
 
-## 🛡️Security Implementations
+## 🛡️ Security Implementations
 <ol>
   <li><b>🔐 JWT Authentication & Authorization</b> – Ensures only verified users can access protected routes and sensitive operations.</li>
   <li><b>🧹 Input Sanitization</b> – Uses <code>sanitize-html</code> to prevent XSS, script injections, and malicious HTML payloads.</li>
