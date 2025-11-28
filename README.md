@@ -203,7 +203,7 @@
 <p><b>URL</b>: localhost:3000/api/uploadImage</p>
 <p><b>Authorization</b>: Bearer < generated_token ></p>
 <p><b>Request body:</b></p>
-<h3><b>form-data:</b></h3>
+<h5><b>form-data:</b></h5>
 <p><b>key</b>: profilePicture [File] | <b>value</b>: img.jpg </p>
 <p><b>Response body:</b></p>
 <pre>
