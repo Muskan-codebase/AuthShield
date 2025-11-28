@@ -1,6 +1,10 @@
 <h2>🛡AuthShield — User Authentication & Security System</h2>
 <p><b>AuthShield</b> is a production-ready full-stack authentication system built with <b>Node.js</b>, <b>Express</b>, <b>React</b>, and <b>MongoDB</b>, designed with a strong focus on security, reliability, and modern authentication practices. It includes secure <b>JWT-based authentication</b>, <b>Google OAuth 2.0</b> integration, <b>OTP-driven password reset</b> using Nodemailer, and <b>Cloudinary-powered profile uploads</b>, providing a complete and scalable user management system. AuthShield is reinforced with multiple layers of protection such as <b>rate limiting</b>, <b>input sanitization</b>, <b>XSS prevention</b>, and <b>brute-force attack mitigation</b>, making it suitable for real-world applications and secure production deployments. </p>
 
+<h3>Home Page</h3>
+
+[!home page](https://github.com/Muskan-codebase/AuthShield/blob/498d4ffc16c6f99185559b8a1161595f5fee32e1/frontend/src/assets/home.png)
+
 <h2>🚀 Features</h2>
 <h3>🔑 Authentication</h3>
 <ol>
