@@ -5,6 +5,7 @@ const createJWT = require("../middleware/generateToken")
 const generateOTP = require("../utils/generateOTP")
 const sendEmail = require("../utils/sendEmail")
 const cloudinary = require("../utils/cloudinary");
+const resetToken = require("../utils/generateResetToken")
 
 const signup = async (req, res) => {
 
@@ -61,14 +62,15 @@ const login = async (req, res) => {
         }
 
         const user = await Users.findOne({ email })
-        const passwordMatch = await bcrypt.compare(password, user.password)
 
         if (!user) {
-            return res.status(400).json({ message: "Invalid credentials!" })
+            return res.status(400).json({ message: "Invalid credentials!" });
         }
 
+        const passwordMatch = await bcrypt.compare(password, user.password);
+
         if (!passwordMatch) {
-            return res.status(400).json({ message: "Incorrect Password! try again ..." })
+            return res.status(400).json({ message: "Incorrect password!" });
         }
 
         const token = createJWT({ userId: user._id, email: user.email })
@@ -143,7 +145,16 @@ const verifyOTP = async (req, res) => {
             return res.status(400).json({ message: "OTP Expired!" })
         }
 
-        res.status(200).json({ message: "OTP Verified successfully!" })
+        user.otp = undefined;
+        user.otpExpiry = undefined;
+
+        const reset_Token = resetToken();
+        user.resetToken = reset_Token;
+        user.resetTokenExpiry = Date.now() + 10 * 60 * 1000;
+        await user.save();
+
+        const redirectURL = `http://localhost:5173/resetPassword?token=${resetToken}&email=${email}`
+        res.status(200).json({ message: "OTP Verified successfully!", redirectURL })
 
     } catch (err) {
 
@@ -156,15 +167,20 @@ const resetPassword = async (req, res) => {
 
     try {
 
-        const { email, newPassword, confirmNewPassword } = req.body;
+        const { email, resetToken, newPassword, confirmNewPassword } = req.body;
 
-        if (!email || !newPassword || !confirmNewPassword) {
-            return res.status(400).json({ message: "Enter the mandatory fields to reset password" })
+        if (!email || !resetToken || !newPassword || !confirmNewPassword) {
+            return res.status(400).json({ message: "Fill all required fields" });
         }
 
-        const user = await Users.findOne({ email });
+        const user = await Users.findOne({
+            email,
+            resetToken,
+            resetTokenExpiry: { $gt: Date.now() } // Check expiry
+        });
+
         if (!user) {
-            return res.status(400).json({ message: "User not found!" })
+            return res.status(400).json({ message: "Invalid or expired token!" });
         }
 
         if (newPassword.length < 8) {
@@ -176,10 +192,14 @@ const resetPassword = async (req, res) => {
             return res.status(400).json({ message: "Password did not Match! try again ..." })
         }
 
+        if (!user.otpVerified) {
+            return res.status(400).json({ message: "OTP not verified!" })
+        }
+
         const newHashedPassword = await bcrypt.hash(newPassword, 10);
         user.password = newHashedPassword;
-        user.otp = undefined;
-        user.otpExpiry = undefined;
+        user.resetToken = undefined;
+        user.resetTokenExpiry = undefined;
 
         await user.save();
         res.status(200).json({ message: "Password reset successfully", user })

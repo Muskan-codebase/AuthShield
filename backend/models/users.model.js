@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
 
-    googleId: { 
-        type: String, 
-        unique: true, 
-        sparse: true 
+    googleId: {
+        type: String,
+        unique: true,
+        sparse: true
     }, // for Google users
     profilePic: {
         type: String
@@ -29,6 +29,12 @@ const userSchema = new mongoose.Schema({
         type: String
     },
     otpExpiry: {
+        type: Date
+    },
+    resetToken: {
+        type: String
+    },
+    resetTokenExpiry: {
         type: Date
     },
     createdAt: {
