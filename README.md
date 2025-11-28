@@ -282,7 +282,6 @@
 ┃ ┣ 📜generateOTP.js
 ┃ ┣ 📜generateResetToken.js
 ┃ ┗ 📜sendEmail.js
-┣ 📜.env
 ┣ 📜.gitignore
 ┣ 📜config.js
 ┣ 📜db.connection.js
