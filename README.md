@@ -3,7 +3,7 @@
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Images](#images)
-3. [Features](##features)
+3. [Features](#features)
 4. [Security Implementations](#security-implementations)
 5. [Tech Stack](#tech-stack)
 6. [Installation](#installation)
@@ -14,7 +14,7 @@
 11. [License](#license)
 
 
-<h3>Introduction</h3>
+### Introduction
 <p><b>AuthShield</b> is a full-stack User Authentication System built with <b>Node.js</b>, <b>Express.js</b>, <b>React.js</b>, and <b>MongoDB</b>, designed with a strong focus on security, reliability, and modern authentication practices.</p>
 
 <p>It includes secure <b>JWT-based authentication</b>, <b>Google OAuth 2.0 integration</b>, <b>OTP-driven password reset using Nodemailer</b>, and <b>Cloudinary-powered profile uploads</b>, providing a complete and scalable user management system.</p>
