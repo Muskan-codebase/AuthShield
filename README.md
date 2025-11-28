@@ -59,6 +59,7 @@
   <li><b>⚡ Helmet</b> – Adds secure HTTP headers to protect against common web vulnerabilities and enforce safer browser behavior.</li>
   <li><b>🛑 Rate Limiting</b> – Applied across critical APIs (Signup, Login etc.) to prevent brute-force attacks, spam registrations, multiple failed login attemtps and API abuse.</li>
   <li><b>🔒 Password Hashing</b> – All user passwords are securely hashed using <code>bcrypt</code> before being stored in the database.</li>
+  <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b> – Uses <code>crypto</code> module to generate tokens for OTP verification and password resets.</li>
 </ol>
 
 <h2>🛠 Tech Stack</h2>
