@@ -7,7 +7,7 @@
 4. [Security Implementations](#security-implementations)
 5. [Tech Stack](#tech-stack)
 6. [Installation](#installation)
-7. [API Endpoints](#-api-endpoints)
+7. [API Endpoints](#api-endpoints)
 8. [Folder Structure](#folder-structure)
 9. [What I Learned](#what-i-learned)
 10. [Future Enhancements](#future-enhancements)
