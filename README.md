@@ -4,15 +4,14 @@
 1. [Introduction](#introduction)
 2. [Images](#images)
 3. [Features](#-features)
-4. [Security Implementations](#--security-implementations)
-5. [Tech Stack](#tech-stack)
+4. [Security Implementations](#-security-implementations)
+5. [Tech Stack](#-tech-stack)
 6. [Installation](#installation)
 7. [API Endpoints](#api-endpoints)
 8. [Folder Structure](#folder-structure)
 9. [What I Learned](#what-i-learned)
 10. [Future Enhancements](#future-enhancements)
 11. [License](#license)
-
 
 ### Introduction
 <p><b>AuthShield</b> is a full-stack User Authentication System built with <b>Node.js</b>, <b>Express.js</b>, <b>React.js</b>, and <b>MongoDB</b>, designed with a strong focus on security, reliability, and modern authentication practices.</p>
