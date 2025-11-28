@@ -267,6 +267,86 @@
 }
 </pre>
 
+<hr>
+
+<h2>Folder Structure</h2>
+
+<h3>Backend</h3>
+┣ 📂controllers
+┃ ┣ 📜google.OAuth.controller.js
+┃ ┗ 📜users.controller.js
+┣ 📂middleware
+┃ ┣ 📜generateToken.js
+┃ ┣ 📜upload.js
+┃ ┗ 📜verifyJwtToken.js
+┣ 📂models
+┃ ┗ 📜users.model.js
+┣ 📂rate-limiter
+┃ ┗ 📜rateLimiter.js
+┣ 📂routes
+┃ ┣ 📜google.OAuth.route.js
+┃ ┗ 📜user.routes.js
+┣ 📂utils
+┃ ┣ 📜cloudinary.js
+┃ ┣ 📜generateOTP.js
+┃ ┣ 📜generateResetToken.js
+┃ ┗ 📜sendEmail.js
+┣ 📜.env
+┣ 📜.gitignore
+┣ 📜config.js
+┣ 📜db.connection.js
+┣ 📜index.js
+┗ 📜package.json
+
+<h3>Frontend</h3>
+┣ 📂public
+┃ ┗ 📜vite.svg
+┣ 📂src
+┃ ┣ 📂assets
+┃ ┃ ┣ 📜blue-bg.avif
+┃ ┃ ┣ 📜blue-bg.jpg
+┃ ┃ ┣ 📜orange-bg.jpg
+┃ ┃ ┣ 📜profile-icon.webp
+┃ ┃ ┣ 📜react.svg
+┃ ┃ ┗ 📜shield.png
+┃ ┣ 📂custom-hooks
+┃ ┃ ┣ 📜useDeleteAccount.js
+┃ ┃ ┣ 📜useEditProfile.js
+┃ ┃ ┣ 📜useFetchUserProfile.js
+┃ ┃ ┣ 📜useForgotPassword.js
+┃ ┃ ┣ 📜useLogin.js
+┃ ┃ ┣ 📜useRemoveProfilePic.js
+┃ ┃ ┣ 📜useResetPassword.js
+┃ ┃ ┣ 📜useSignup.js
+┃ ┃ ┗ 📜useVerifyOTP.js
+┃ ┣ 📂layout
+┃ ┃ ┣ 📜Footer.jsx
+┃ ┃ ┗ 📜Header.jsx
+┃ ┣ 📂popup-modals
+┃ ┃ ┣ 📜DialogModal1.jsx
+┃ ┃ ┣ 📜DialogModal2.jsx
+┃ ┃ ┗ 📜DialogModal3.jsx
+┃ ┣ 📂protected-route
+┃ ┃ ┗ 📜ProtectedRoute.jsx
+┃ ┣ 📜App.css
+┃ ┣ 📜App.jsx
+┃ ┣ 📜EditProfile.jsx
+┃ ┣ 📜Email.jsx
+┃ ┣ 📜Home.jsx
+┃ ┣ 📜index.css
+┃ ┣ 📜Login.jsx
+┃ ┣ 📜main.jsx
+┃ ┣ 📜Profile.jsx
+┃ ┣ 📜ResetPassword.jsx
+┃ ┣ 📜Signup.jsx
+┃ ┗ 📜VerifyOTP.jsx
+┣ 📜.gitignore
+┣ 📜eslint.config.js
+┣ 📜index.html
+┣ 📜package.json
+┣ 📜README.md
+┗ 📜vite.config.js
+
 
 
 
