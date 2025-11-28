@@ -203,9 +203,8 @@
 <p><b>URL</b>: localhost:3000/api/uploadImage</p>
 <p><b>Authorization</b>: Bearer < generated_token ></p>
 <p><b>Request body:</b></p>
-<p><b>form-data:</b></p>
-<p><b>key</b>: profilePicture [File]</p>
-<p><b>value</b>: img.jpg </p>
+<h3><b>form-data:</b></h3>
+<p><b>key</b>: profilePicture [File] | <b>value</b>: img.jpg </p>
 <p><b>Response body:</b></p>
 <pre>
 {
@@ -221,7 +220,19 @@
 }
 </pre>
 
-<h4>2. Delete Photo</h4>
+<h4>2. Remove Photo</h4>
+<p><b>Method</b>: DELETE</p>
+<p><b>URL</b>: localhost:3000/api/removeProfilePic</p>
+<p><b>Authorization</b>: Bearer < generated_token ></p>
+<p><b>Response body:</b></p>
+<pre>
+{
+    "message": "Photo removed",
+}
+</pre>
+
+
+<h4>2. Delete Account</h4>
 <p><b>Method</b>: DELETE</p>
 <p><b>URL</b>: localhost:3000/api/deleteAccount</p>
 <p><b>Authorization</b>: Bearer < generated_token ></p>
