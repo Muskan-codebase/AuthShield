@@ -4,7 +4,7 @@ import axios from "axios";
 
 const useVerifyOTP = () => {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const verifyOTP = async ({ email, otp }) => {
 
@@ -15,13 +15,14 @@ const useVerifyOTP = () => {
                 otp
             })
 
-            if (response) {
-
-                toast.success(response.data.message)
-                // window.location.reload();
+            if (response.data.message) {
+                toast.success(response.data.message);
             }
 
-            navigate("/resetPassword")
+            if (response.data.redirectURL) {
+                // Redirect user to reset-password page with token
+                window.location.href = response.data.redirectURL;
+            }
 
 
         } catch (error) {

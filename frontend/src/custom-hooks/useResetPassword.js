@@ -6,31 +6,26 @@ const useResetPassword = function () {
 
     const navigate = useNavigate();
 
-    const resetPassword = async function ({ email, newPassword, confirmNewPassword }) {
-
+    const resetPassword = async function ({ email, resetToken, newPassword, confirmNewPassword }) {
         try {
-
             const response = await axios.post("http://localhost:3000/api/resetPassword", {
                 email,
+                resetToken,
                 newPassword,
                 confirmNewPassword
-            })
+            });
 
             if (response) {
-
-                toast.success(response.data.message)
-                // window.location.reload();
+                toast.success(response.data.message);
             }
 
-            navigate("/login")
-
+            navigate("/login");
 
         } catch (error) {
-
-            if (error.response.data && error.response.data.message) {
-                toast.error(error.response.data.message)
+            if (error.response?.data?.message) {
+                toast.error(error.response.data.message);
             } else {
-                toast.error("Some Error occured during Signup Process. Try again ....")
+                toast.error("Some error occurred. Try again...");
                 console.log("Error", error);
             }
         }

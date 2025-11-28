@@ -27,7 +27,7 @@ function useDeleteAccount() {
 
             // window.location.reload();
             localStorage.removeItem("Token")
-            navigate("/");
+            window.location.href = "/"
 
         } catch (error) {
 

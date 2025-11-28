@@ -5,7 +5,7 @@ import axios from "axios";
 
 function useLogin() {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const login = async function ({ email, password }) {
 
@@ -23,7 +23,7 @@ function useLogin() {
                 toast.success(response.data.message);
             }
 
-            navigate("/profile");
+            window.location.href = "/profile"
             // window.location.reload();
 
         } catch (error) {

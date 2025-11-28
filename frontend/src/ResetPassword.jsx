@@ -3,12 +3,17 @@ import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
-import { useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios"
 import useResetPassword from './custom-hooks/useResetPassword';
 
 function ResetPassword() {
+
+    const [searchParams] = useSearchParams();
+    const tokenFromURL = searchParams.get("token");
+    const emailFromURL = searchParams.get("email");
+
     const [email, setEmail] = useState();
     const [newPassword, setNewPassword] = useState();
     const [confirmNewPassword, setConfirmNewPassword] = useState();
@@ -41,9 +46,18 @@ function ResetPassword() {
     const handleResetPassword = async function (e) {
 
         e.preventDefault();
-        resetPassword({ email, newPassword, confirmNewPassword });
+        if (!tokenFromURL || !emailFromURL) {
+            toast.error("OTP Verification required!");
+            return;
+        }
 
-        setEmail("");
+        await resetPassword({
+            email: emailFromURL,
+            resetToken: tokenFromURL,
+            newPassword,
+            confirmNewPassword
+        });
+
         setNewPassword("");
         setConfirmNewPassword("");
 
