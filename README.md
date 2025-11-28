@@ -272,6 +272,7 @@
 <h2>Folder Structure</h2>
 
 <h3>Backend</h3>
+<pre>
 ┣ 📂controllers
 ┃ ┣ 📜google.OAuth.controller.js
 ┃ ┗ 📜users.controller.js
@@ -297,8 +298,10 @@
 ┣ 📜db.connection.js
 ┣ 📜index.js
 ┗ 📜package.json
+</pre>
 
 <h3>Frontend</h3>
+<pre>
 ┣ 📂public
 ┃ ┗ 📜vite.svg
 ┣ 📂src
@@ -346,6 +349,7 @@
 ┣ 📜package.json
 ┣ 📜README.md
 ┗ 📜vite.config.js
+</pre>
 
 
 
