@@ -13,6 +13,8 @@
 10. [Future Enhancements](#-future-enhancements)
 11. [License](#license)
 
+<hr>
+
 ### Introduction
 <p><b>AuthShield</b> is a full-stack User Authentication System built with <b>Node.js</b>, <b>Express.js</b>, <b>React.js</b>, and <b>MongoDB</b>, designed with a strong focus on security, reliability, and modern authentication practices.</p>
 
