@@ -38,6 +38,8 @@
 
 ![login page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/login.png)
 
+<hr>
+
 ## 🚀 Features
 <h3>🔑 Authentication</h3>
 <ol>
@@ -67,6 +69,8 @@
   <li>Fully custom OAuth flow implemented without Passport.js, providing complete control over user handling and token management.</li>
 </ol>
 
+<hr>
+
 ## 🛡Security Implementations
 <ol>
   <li><b>🔐 JWT Authentication & Authorization</b> – Ensures only verified users can access protected routes and sensitive operations.</li>
@@ -76,6 +80,8 @@
   <li><b>🔒 Password Hashing</b> – All user passwords are securely hashed using <code>bcrypt</code> before being stored in the database.</li>
   <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b> – Uses <code>crypto</code> module to generate tokens for OTP verification and password resets.</li>
 </ol>
+
+<hr> 
 
 ## 🛠 Tech Stack
 <ul>
@@ -259,7 +265,6 @@
 }
 </pre>
 
-
 <h4>2. Delete Account</h4>
 <p><b>Method</b>: DELETE</p>
 <p><b>URL</b>: localhost:3000/api/deleteAccount</p>
@@ -374,6 +379,8 @@
   <li>implementation of Profile image uploads using Cloudinary storage</li>
   <li>Writing clean, modular, scalable Node.js code</li>
 </ul>
+
+<hr>
 
 ## 🚀 Future Enhancements
 <ol>
