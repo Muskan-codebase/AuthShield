@@ -4,7 +4,7 @@
 1. [Introduction](#introduction)
 2. [Images](#images)
 3. [Features](#-features)
-4. [Security Implementations](#security-implementations)
+4. [Security Implementations](#--security-implementations)
 5. [Tech Stack](#tech-stack)
 6. [Installation](#installation)
 7. [API Endpoints](#api-endpoints)
