@@ -9,8 +9,8 @@
 6. [Installation](#installation)
 7. [API Endpoints](#api-endpoints)
 8. [Folder Structure](#folder-structure)
-9. [What I Learned](#what-i-learned)
-10. [Future Enhancements](#future-enhancements)
+9. [What I Learned](#-what-i-learned)
+10. [Future Enhancements](#-future-enhancements)
 11. [License](#license)
 
 ### Introduction
@@ -65,7 +65,7 @@
   <li>Fully custom OAuth flow implemented without Passport.js, providing complete control over user handling and token management.</li>
 </ol>
 
-## 🛡️ Security Implementations
+## 🛡️Security Implementations
 <ol>
   <li><b>🔐 JWT Authentication & Authorization</b> – Ensures only verified users can access protected routes and sensitive operations.</li>
   <li><b>🧹 Input Sanitization</b> – Uses <code>sanitize-html</code> to prevent XSS, script injections, and malicious HTML payloads.</li>
