@@ -23,7 +23,7 @@
 
 <hr>
 
-<h2>Images</h2>
+## Images
 
 <h3>Home Page</h3>
 
@@ -37,7 +37,7 @@
 
 ![login page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/login.png)
 
-<h2>🚀 Features</h2>
+## 🚀 Features
 <h3>🔑 Authentication</h3>
 <ol>
   <li>User Signup and Login implemented with JWT (JSON Web Token) authentication.</li>
@@ -66,7 +66,7 @@
   <li>Fully custom OAuth flow implemented without Passport.js, providing complete control over user handling and token management.</li>
 </ol>
 
-<h2>🛡️ Security Implementations</h2>
+## 🛡️ Security Implementations
 <ol>
   <li><b>🔐 JWT Authentication & Authorization</b> – Ensures only verified users can access protected routes and sensitive operations.</li>
   <li><b>🧹 Input Sanitization</b> – Uses <code>sanitize-html</code> to prevent XSS, script injections, and malicious HTML payloads.</li>
@@ -76,7 +76,7 @@
   <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b> – Uses <code>crypto</code> module to generate tokens for OTP verification and password resets.</li>
 </ol>
 
-<h2>🛠 Tech Stack</h2>
+## 🛠 Tech Stack
 <ul>
   <li><b>Frontend</b>: React.js, Tailwind CSS, Daisy UI.</li>
   <li><b>Backend</b>: Node.js, Express.js.</li>
@@ -87,7 +87,7 @@
 
 <hr>
 
-<h3>API Documentation</h3>
+## API Endpoints
 <h3>User Authentication</h3>
 
 <h4>1. Signup</h4>
@@ -280,7 +280,7 @@
 
 <hr>
 
-<h2>Folder Structure</h2>
+## 📁Folder Structure
 
 <h3>Backend</h3>
 <pre>
@@ -363,7 +363,7 @@
 
 <hr>
 
-<h2>📝 What I Learned</h2>
+## 📝 What I Learned
 <ul>
   <li>Deep understanding of JWT and token-based authentication</li>
   <li>Implementing Google OAuth 2.0 from scratch</li>
@@ -374,7 +374,7 @@
   <li>Writing clean, modular, scalable Node.js code</li>
 </ul>
 
-<h2>🚀 Future Enhancements</h2>
+## 🚀 Future Enhancements
 <ol>
   <li><b>🍪 HttpOnly Cookie Implementation</b> – Store authentication tokens in HttpOnly cookies to enhance security and prevent tokens being accessed through javaScript.</li>
   <li><b>🛡️ Role-Based Authorization</b> – Implement roles (e.g., admin, user) to restrict access to certain routes and operations based on role permissions.</li>
