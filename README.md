@@ -5,6 +5,10 @@
 
 ![home page](https://github.com/Muskan-codebase/AuthShield/blob/498d4ffc16c6f99185559b8a1161595f5fee32e1/frontend/src/assets/home.png)
 
+<h3>Signup Page</h3>
+
+![signup page](https://github.com/Muskan-codebase/AuthShield/blob/6a9aeac4aa278582f2d7bcdaef5ebeeb1872ecc8/frontend/src/assets/signup.png)
+
 <h2>🚀 Features</h2>
 <h3>🔑 Authentication</h3>
 <ol>
