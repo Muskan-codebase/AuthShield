@@ -3,7 +3,7 @@
 
 <h3>Home Page</h3>
 
-[!home page](https://github.com/Muskan-codebase/AuthShield/blob/498d4ffc16c6f99185559b8a1161595f5fee32e1/frontend/src/assets/home.png)
+![home page](https://github.com/Muskan-codebase/AuthShield/blob/498d4ffc16c6f99185559b8a1161595f5fee32e1/frontend/src/assets/home.png)
 
 <h2>🚀 Features</h2>
 <h3>🔑 Authentication</h3>
