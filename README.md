@@ -1,11 +1,11 @@
 <h2>🛡AuthShield — User Authentication & Security System</h2>
 
 <h3>Introduction</h3>
-<p><b>AuthShield</b> is a production-ready full-stack authentication system built with <b>Node.js</b>, <b>Express</b>, <b>React</b>, and <b>MongoDB</b>, designed with a strong focus on security, reliability, and modern authentication practices.</p>
+<p><b>AuthShield</b> is a full-stack User Authentication System built with <b>Node.js</b>, <b>Express.js</b>, <b>React.js</b>, and <b>MongoDB</b>, designed with a strong focus on security, reliability, and modern authentication practices.</p>
 
-<p>It includes secure <b>JWT-based authentication</b>, <b>Google OAuth 2.0</b> integration, <b>OTP-driven password reset</b> using Nodemailer, and <b>Cloudinary-powered profile uploads</b>, providing a complete and scalable user management system.</p>
+<p>It includes secure <b>JWT-based authentication</b>, <b>Google OAuth 2.0 integration</b>, <b>OTP-driven password reset using Nodemailer</b>, and <b>Cloudinary-powered profile uploads</b>, providing a complete and scalable user management system.</p>
 
-<p>AuthShield is reinforced with multiple layers of protection such as <b>rate limiting</b>, <b>input sanitization</b>, <b>XSS prevention</b>, and <b>brute-force attack mitigation</b>, making it suitable for real-world applications and secure production deployments. </p>
+<p>AuthShield is reinforced with multiple layers of protection such as <b>rate limiting</b>, <b>input sanitization</b>, <b>XSS prevention</b>, <b>brute-force attack mitigation</b>, and secure OTP-based password reset flows making it suitable for real-world applications.</p>
 
 <hr>
 
