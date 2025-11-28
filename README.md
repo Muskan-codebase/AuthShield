@@ -158,8 +158,9 @@
 <pre>
 {
     "email": "dummyuserjd1995@gmail.com",
-    "newPassword": "john@12345",
-    "confirmNewPassword": "john@12345"
+    "resetToken": < reset_Token >,
+    "newPassword": "john@12345678910",
+    "confirmNewPassword": "john@12345678910"
 }
 </pre>
 <br>
