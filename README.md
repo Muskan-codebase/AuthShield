@@ -359,6 +359,14 @@
   <li>Writing clean, modular, scalable Node.js code</li>
 </ul>
 
+<h2>🚀 Future Enhancements</h2>
+<ol>
+  <li><b>🍪 HttpOnly Cookie Implementation</b> – Store authentication tokens in HttpOnly cookies to enhance security and prevent tokens being accessed through javaScript.</li>
+  <li><b>🛡️ Role-Based Authorization</b> – Implement roles (e.g., admin, user) to restrict access to certain routes and operations based on role permissions.</li>
+  <li><b>🔐 CSRF Protection</b> – Add Cross-Site Request Forgery protection to secure forms and API endpoints against unauthorized requests from malicious sites.</li>
+</ol>
+
+
 
 
 
