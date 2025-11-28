@@ -14,7 +14,7 @@ function ResetPassword() {
     const tokenFromURL = searchParams.get("token");
     const emailFromURL = searchParams.get("email");
 
-    const [email, setEmail] = useState();
+    // const [email, setEmail] = useState();
     const [newPassword, setNewPassword] = useState();
     const [confirmNewPassword, setConfirmNewPassword] = useState();
     const [showNewPassword, setShowNewPassword] = useState(false);
@@ -31,9 +31,9 @@ function ResetPassword() {
         setShowConfirmNewPassword(!showConfirmNewPassword)
     }
 
-    const updateEmail = (e) => {
-        setEmail(e.target.value);
-    }
+    // const updateEmail = (e) => {
+    //     setEmail(e.target.value);
+    // }
 
     function updatePassword(e) {
         setNewPassword(e.target.value)
@@ -82,13 +82,13 @@ function ResetPassword() {
                 <form onSubmit={handleResetPassword} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-4 hover:scale-105 transition-transform duration-500 ease-in-out cursor-pointer'>
                     <h1 className='text-center text-2xl font-bold text-blue-700'>Reset Password</h1>
 
-                    <label className='text-lg'>Email</label><br></br>
-                    <input type="email" value={email} onChange={updateEmail} placeholder="mail@site.com" className="input w-full" />
+                    {/* <label className='text-lg'>Email</label><br></br>
+                    <input type="email" value={email} onChange={updateEmail} placeholder="mail@site.com" className="input w-full" /> */}
 
                     <br></br>
 
                     <div className="relative">
-                        <label className='text-lg'>New password</label><br></br>
+                        <label className='text-lg text-blue-600 font-semibold'>New password</label><br></br>
                         <input type={showNewPassword ? "text" : "password"} value={newPassword} onChange={updatePassword} placeholder="new password" className="input w-full" />
                         {showNewPassword ?
                             (<span className="absolute right-3 top-2/3 transform -translate-y-1/2 cursor-pointer">
@@ -104,7 +104,7 @@ function ResetPassword() {
                     </div>
 
                     <div className="relative">
-                        <label className='text-lg'>Confirm New Password</label><br></br>
+                        <label className='text-lg text-blue-600 font-semibold'>Confirm New Password</label><br></br>
                         <input type={showConfirmNewPassword ? "text" : "password"} value={confirmNewPassword} onChange={updateConfirmNewPassword} placeholder="confirm new password" className="input w-full" />
                         {showConfirmNewPassword ?
                             (<span className="absolute right-3 top-2/3 transform -translate-y-1/2 cursor-pointer">

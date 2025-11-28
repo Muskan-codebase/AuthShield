@@ -4,7 +4,7 @@ import axios from "axios";
 
 const useSignup = () => {
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const signup = async ({ name, email, password, confirmPassword }) => {
 
@@ -25,7 +25,7 @@ const useSignup = () => {
                 toast.success(response.data.message);
             }
 
-           window.location.href = "/profile"
+           navigate("/profile")
             // window.location.reload();
 
         } catch (error) {
