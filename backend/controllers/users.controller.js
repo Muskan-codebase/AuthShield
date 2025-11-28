@@ -153,7 +153,7 @@ const verifyOTP = async (req, res) => {
         user.resetTokenExpiry = Date.now() + 10 * 60 * 1000;
         await user.save();
 
-        const redirectURL = `http://localhost:5173/resetPassword?token=${resetToken}&email=${email}`
+        const redirectURL = `http://localhost:5173/resetPassword?token=${reset_Token}&email=${email}`
         res.status(200).json({ message: "OTP Verified successfully!", redirectURL })
 
     } catch (err) {
@@ -192,9 +192,9 @@ const resetPassword = async (req, res) => {
             return res.status(400).json({ message: "Password did not Match! try again ..." })
         }
 
-        if (!user.otpVerified) {
-            return res.status(400).json({ message: "OTP not verified!" })
-        }
+        // if (!user.otpVerified) {
+        //     return res.status(400).json({ message: "OTP not verified!" })
+        // }
 
         const newHashedPassword = await bcrypt.hash(newPassword, 10);
         user.password = newHashedPassword;
