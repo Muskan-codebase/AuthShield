@@ -101,7 +101,7 @@ function Signup() {
                     <br></br>
 
                     <label className='text-lg'>Email</label><br></br>
-                    <input type="email" value={email} onChange={updateEmail} placeholder="mail@site.com" className="input w-full" />
+                    <input type="email" value={email} onChange={updateEmail} placeholder="email" className="input w-full" />
 
                     <br></br>
 

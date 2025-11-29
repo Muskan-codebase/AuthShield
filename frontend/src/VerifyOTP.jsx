@@ -36,7 +36,7 @@ function VerifyOTP() {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundAttachment: "fixed",
-                minHeight: "100vh",
+                minHeight: "92vh",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -46,9 +46,10 @@ function VerifyOTP() {
 
                 <form onSubmit={handleVerifyOTP} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-4 hover:scale-105 transition-transform duration-500 ease-in-out cursor-pointer'>
                     <h1 className='text-center text-4xl font-bold text-blue-700'>Verify OTP</h1>
+                    <h2 className='text-center text-lg font-semibold text-grey-500'>Enter the 6-digit code sent to your email.</h2>
 
                     <label className='text-xl'>Email</label><br></br>
-                    <input type="email" value={email} onChange={updateEmail} placeholder="mail@site.com" className="input w-full" />
+                    <input type="email" value={email} onChange={updateEmail} placeholder="email" className="input w-full" />
 
                     <label className='text-xl'>OTP</label><br></br>
                     <input type="text" inputMode="numeric" pattern="\d*" value={otp} onChange={updateOTP} maxLength={6} placeholder="OTP" className="input w-full" />

@@ -50,7 +50,7 @@ function Profile() {
   return (
     <>
       <div className='flex itmes-center justify-center p-10 pb-50'>
-        <div className='border-2 border-gray-300 shadow-2xl shadow-gray-500 w-100 h-auto p-5 rounded-xl text-center mt-5'>
+        <div className='border-2 border-gray-300 shadow-2xl shadow-gray-500 w-100 h-auto p-10 rounded-xl text-center mt-5'>
           <h1 className='text-4xl font-semibold text-black'>Profile</h1>
           <div className='flex items-center justify-center mt-5 mb-5'>
             <div className="avatar">
@@ -63,9 +63,17 @@ function Profile() {
               </div>
             </div>
           </div>
-          <p className='text-2xl'>{user?.name}</p>
-          <p className='text-2xl'>{user?.email}</p><br></br>
+          <p className='text-2xl font-bold'>{user?.name}</p>
+          <p className='text-lg text-gray-700'>{user?.email}</p><br></br>
 
+          {user?.bio ?
+            (<p className='text-xl pb-5 font-semibold'>{user?.bio}</p>)
+
+            :
+
+            (null)
+
+          }
           <div className='space-y-4'>
             <button onClick={() => document.getElementById('my_modal_1').showModal()} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer'><MdEditSquare />Edit profile</button>
             <button onClick={handleRemoveProfilePic} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer'>Remove Photo</button>
@@ -75,7 +83,7 @@ function Profile() {
         </div>
       </div>
 
-      <EditProfile></EditProfile>
+      <EditProfile user={user} setUser={setUser}></EditProfile>
 
       <DialogModal2 props={handleDeleteAccount}></DialogModal2>
 

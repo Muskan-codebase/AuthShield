@@ -71,21 +71,17 @@ function ResetPassword() {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundAttachment: "fixed",
-                minHeight: "100vh",
+                minHeight: "92vh",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                flexDirection: "column",
-                padding: "50px"
+                // flexDirection: "column",
+                // padding: "50px"
             }} className='flex justify-center items-center'>
 
                 <form onSubmit={handleResetPassword} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-4 hover:scale-105 transition-transform duration-500 ease-in-out cursor-pointer'>
-                    <h1 className='text-center text-2xl font-bold text-blue-700'>Reset Password</h1>
-
-                    {/* <label className='text-lg'>Email</label><br></br>
-                    <input type="email" value={email} onChange={updateEmail} placeholder="mail@site.com" className="input w-full" /> */}
-
-                    <br></br>
+                    <h1 className='text-center text-3xl font-bold text-blue-700'>Reset Password</h1>
+                    <h2 className='text-center text-lg font-semibold text-grey-700'>Set a strong password to secure your account.</h2>
 
                     <div className="relative">
                         <label className='text-lg text-blue-600 font-semibold'>New password</label><br></br>

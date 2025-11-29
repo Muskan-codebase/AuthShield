@@ -36,9 +36,11 @@ function Email() {
                 padding: "50px"
             }} className='flex justify-center items-center'>
 
-                <form onSubmit={handleForgotPassword} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-10 h-auto w-auto space-y-4 hover:scale-105 transition-transform duration-500 ease-in-out cursor-pointer'>
-                    <h1 className='text-center text-3xl font-bold text-blue-700 mb-10'>Enter Your Email to Receive OTP</h1>
-                    <label className='text-lg'>Enter your Email Id</label><br></br>
+                <form onSubmit={handleForgotPassword} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-10 h-auto w-100 space-y-4 hover:scale-105 transition-transform duration-500 ease-in-out cursor-pointer'>
+                    <h1 className='text-center text-3xl font-bold text-blue-700'>Forgot Password</h1>
+                    <h1 className='text-center text-lg font-semibold text-grey-500'>Enter Your Email to Receive OTP</h1>
+                    <br></br>
+                    <label className='text-lg'>Email</label><br></br>
                     <input type="email" value={email} onChange={updateEmail} placeholder="email" className="input w-full text-lg" />
 
                     <br></br>

@@ -55,7 +55,7 @@ function Login() {
                     <h1 className='text-center text-5xl font-semibold text-blue-700'>Login</h1>
 
                     <label className='text-lg'>Email</label><br></br>
-                    <input type="email" value={email} onChange={updateEmail} placeholder="mail@site.com" className="input w-full" />
+                    <input type="email" value={email} onChange={updateEmail} placeholder="email" className="input w-full" />
 
                     <br></br>
 
