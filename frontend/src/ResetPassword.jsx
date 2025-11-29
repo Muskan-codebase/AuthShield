@@ -79,10 +79,11 @@ function ResetPassword() {
                 // padding: "50px"
             }} className='flex justify-center items-center'>
 
-                <form onSubmit={handleResetPassword} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-5 h-auto w-100 space-y-4 hover:scale-105 transition-transform duration-500 ease-in-out cursor-pointer'>
-                    <h1 className='text-center text-3xl font-bold text-blue-700'>Reset Password</h1>
-                    <h2 className='text-center text-lg font-semibold text-grey-700'>Set a strong password to secure your account.</h2>
-
+                <form onSubmit={handleResetPassword} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-10 h-auto w-100 space-y-4 hover:scale-105 transition-transform duration-500 ease-in-out cursor-pointer'>
+                    <h1 className='text-center text-3xl font-semibold text-blue-700'>Reset Password</h1>
+                    <h2 className='text-center text-lg text-grey-700'>Set a strong password to secure your account.</h2>
+                    <hr className='text-gray-300'></hr>
+                    <br></br>
                     <div className="relative">
                         <label className='text-lg text-blue-600 font-semibold'>New password</label><br></br>
                         <input type={showNewPassword ? "text" : "password"} value={newPassword} onChange={updatePassword} placeholder="new password" className="input w-full" />
