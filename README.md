@@ -38,6 +38,30 @@
 
 ![login page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/login.png)
 
+<h3>Forgot Password</h3>
+
+![forgot password page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/forgot-password.png)
+
+<h3>Verify OTP</h3>
+
+![verify otp page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/verify-otp.png)
+
+<h3>Reset Password</h3>
+
+![reset password page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/reset-password.png)
+
+<h3>User Profile</h3>
+
+![user profile page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/user-profile.png)
+
+<h3>Edit User Profile</h3>
+
+![edit user profile page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/edit-user-profile.png)
+
+<h3>Delete Account</h3>
+
+![delete account page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/delete-account.png)
+
 <hr>
 
 ## 🚀 Features
