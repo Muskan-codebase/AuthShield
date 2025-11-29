@@ -6,12 +6,11 @@
 3. [Features](#-features)
 4. [Security Implementations](#security-implementations)
 5. [Tech Stack](#-tech-stack)
-6. [Installation](#installation)
-7. [API Endpoints](#api-endpoints)
-8. [Folder Structure](#folder-structure)
-9. [What I Learned](#-what-i-learned)
-10. [Future Enhancements](#-future-enhancements)
-11. [License](#license)
+6. [API Endpoints](#api-endpoints)
+7. [Folder Structure](#folder-structure)
+8. [What I Learned](#-what-i-learned)
+9. [Future Enhancements](#-future-enhancements)
+10. [License](#license)
 
 <hr>
 
@@ -26,17 +25,45 @@
 
 ## Images
 
-<h3>Home Page</h3>
+<h3>Home</h3>
 
 ![home page](https://github.com/Muskan-codebase/AuthShield/blob/498d4ffc16c6f99185559b8a1161595f5fee32e1/frontend/src/assets/home.png)
 
-<h3>Signup Page</h3>
+<h3>Signup</h3>
 
 ![signup page](https://github.com/Muskan-codebase/AuthShield/blob/6a9aeac4aa278582f2d7bcdaef5ebeeb1872ecc8/frontend/src/assets/signup.png)
 
-<h3>Login Page</h3>
+<h3>Login</h3>
 
 ![login page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/login.png)
+
+<h3>Forgot Password</h3>
+
+![forgot password page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/forgot-password.png)
+
+<h3>Verify OTP</h3>
+
+![verify otp page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/verify-otp.png)
+
+<h3>Reset Password</h3>
+
+![reset password page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/reset-password.png)
+
+<h3>User Profile</h3>
+
+![user profile page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/user-profile.png)
+
+<h3>Profile Pic View</h3>
+
+![profile pic view](https://github.com/Muskan-codebase/AuthShield/blob/9bf0b355000ec7ac13d4c3d5c8044ecb37e2d9ea/frontend/src/assets/profile-pic-view.png)
+
+<h3>Edit User Profile</h3>
+
+![edit user profile page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/edit-profile.png)
+
+<h3>Delete Account</h3>
+
+![delete account page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/delete-account.png)
 
 <hr>
 
@@ -78,7 +105,7 @@
   <li><b>⚡ Helmet</b> – Adds secure HTTP headers to protect against common web vulnerabilities and enforce safer browser behavior.</li>
   <li><b>🛑 Rate Limiting</b> – Applied across critical APIs (Signup, Login etc.) to prevent brute-force attacks, spam registrations, multiple failed login attemtps and API abuse.</li>
   <li><b>🔒 Password Hashing</b> – All user passwords are securely hashed using <code>bcrypt</code> before being stored in the database.</li>
-  <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b> – Uses <code>crypto</code> module to generate tokens for OTP verification and password resets.</li>
+  <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b> – Uses <code>crypto</code> module to generate tokens for secure OTP verification and password resets.</li>
 </ol>
 
 <hr> 
@@ -384,10 +411,18 @@
 
 ## 🚀 Future Enhancements
 <ol>
-  <li><b>🍪 HttpOnly Cookie Implementation</b> – Store authentication tokens in HttpOnly cookies to enhance security and prevent tokens being accessed through javaScript.</li>
+  <li><b>🍪 HttpOnly Cookie Implementation</b> – Store authentication tokens in HttpOnly cookies to enhance security and prevent tokens being accessed through JavaScript.</li>
   <li><b>🛡️ Role-Based Authorization</b> – Implement roles (e.g., admin, user) to restrict access to certain routes and operations based on role permissions.</li>
   <li><b>🔐 CSRF Protection</b> – Add Cross-Site Request Forgery protection to secure forms and API endpoints against unauthorized requests from malicious sites.</li>
+  <li><b>📩 Resend OTP Functionality</b> – Enable users to request a new OTP if the previous one expires or is not received, improving the overall user experience and reliability of the authentication flow.</li>
 </ol>
+
+<hr>
+
+## License
+This project currently does not have a license. All rights are reserved by the author.
+
+
 
 
 
