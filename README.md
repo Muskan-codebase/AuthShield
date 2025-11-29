@@ -105,7 +105,7 @@
   <li><b>⚡ Helmet</b> – Adds secure HTTP headers to protect against common web vulnerabilities and enforce safer browser behavior.</li>
   <li><b>🛑 Rate Limiting</b> – Applied across critical APIs (Signup, Login etc.) to prevent brute-force attacks, spam registrations, multiple failed login attemtps and API abuse.</li>
   <li><b>🔒 Password Hashing</b> – All user passwords are securely hashed using <code>bcrypt</code> before being stored in the database.</li>
-  <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b> – Uses <code>crypto</code> module to generate tokens for OTP verification and password resets.</li>
+  <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b> – Uses <code>crypto</code> module to generate tokens for secure OTP verification and password resets.</li>
 </ol>
 
 <hr> 
@@ -411,10 +411,18 @@
 
 ## 🚀 Future Enhancements
 <ol>
-  <li><b>🍪 HttpOnly Cookie Implementation</b> – Store authentication tokens in HttpOnly cookies to enhance security and prevent tokens being accessed through javaScript.</li>
+  <li><b>🍪 HttpOnly Cookie Implementation</b> – Store authentication tokens in HttpOnly cookies to enhance security and prevent tokens being accessed through JavaScript.</li>
   <li><b>🛡️ Role-Based Authorization</b> – Implement roles (e.g., admin, user) to restrict access to certain routes and operations based on role permissions.</li>
   <li><b>🔐 CSRF Protection</b> – Add Cross-Site Request Forgery protection to secure forms and API endpoints against unauthorized requests from malicious sites.</li>
+  <li><b>📩 Resend OTP Functionality</b> – Enable users to request a new OTP if the previous one expires or is not received, improving the overall user experience and reliability of the authentication flow.</li>
 </ol>
+
+<hr>
+
+## License
+This project currently does not have a license. All rights are reserved by the author.
+
+
 
 
 
