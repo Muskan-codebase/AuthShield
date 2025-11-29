@@ -264,11 +264,11 @@ const uploadProfilePic = async (req, res) => {
         }
 
         // Only update name or bio if provided
-        if (req.body.name) {
+        if (req.body.name !== undefined) {
             updateData.name = req.body.name;
         }
 
-        if (req.body.bio) {
+        if (req.body.bio !== undefined) {
             updateData.bio = req.body.bio;
         }
         // If no fields provided, just return current user
