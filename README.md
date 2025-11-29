@@ -40,27 +40,27 @@
 
 <h3>Forgot Password</h3>
 
-![forgot password page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/forgot-password.png)
+![forgot password page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/forgot-password.png)
 
 <h3>Verify OTP</h3>
 
-![verify otp page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/verify-otp.png)
+![verify otp page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/verify-otp.png)
 
 <h3>Reset Password</h3>
 
-![reset password page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/reset-password.png)
+![reset password page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/reset-password.png)
 
 <h3>User Profile</h3>
 
-![user profile page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/user-profile.png)
+![user profile page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/user-profile.png)
 
 <h3>Edit User Profile</h3>
 
-![edit user profile page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/edit-user-profile.png)
+![edit user profile page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/edit-profile.png)
 
 <h3>Delete Account</h3>
 
-![delete account page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/delete-account.png)
+![delete account page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/delete-account.png)
 
 <hr>
 
