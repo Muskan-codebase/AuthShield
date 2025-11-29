@@ -26,15 +26,15 @@
 
 ## Images
 
-<h3>Home Page</h3>
+<h3>Home</h3>
 
 ![home page](https://github.com/Muskan-codebase/AuthShield/blob/498d4ffc16c6f99185559b8a1161595f5fee32e1/frontend/src/assets/home.png)
 
-<h3>Signup Page</h3>
+<h3>Signup</h3>
 
 ![signup page](https://github.com/Muskan-codebase/AuthShield/blob/6a9aeac4aa278582f2d7bcdaef5ebeeb1872ecc8/frontend/src/assets/signup.png)
 
-<h3>Login Page</h3>
+<h3>Login</h3>
 
 ![login page](https://github.com/Muskan-codebase/AuthShield/blob/7a45bb30e5135cb278490796df05c96db0c62f13/frontend/src/assets/login.png)
 
