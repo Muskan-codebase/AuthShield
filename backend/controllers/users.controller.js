@@ -7,6 +7,8 @@ const sendEmail = require("../utils/sendEmail")
 const cloudinary = require("../utils/cloudinary");
 const resetToken = require("../utils/generateResetToken")
 
+const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
 const signup = async (req, res) => {
 
     try {
@@ -23,9 +25,15 @@ const signup = async (req, res) => {
             return res.status(400).json({ message: "User already exists! login instead ..." })
         }
 
-        if (password.length < 8) {
-            return res.status(400).json({ message: "Password must be atleast 8 characters long!" })
+        if (!passwordRegex.test(req.body.password)) {
+            return res.status(400).json({
+                message: "Password must be at least 8 characters long and contain a letter, a number, and a special character."
+            });
         }
+
+        // if (password.length < 8) {
+        //     return res.status(400).json({ message: "Password must be atleast 8 characters long!" })
+        // }
 
         if (password !== confirmPassword) {
 
@@ -59,6 +67,12 @@ const login = async (req, res) => {
 
         if (!email || !password) {
             return res.status(400).json({ message: "Please enter mandatory fields!" })
+        }
+
+        if (!passwordRegex.test(password)) {
+            return res.status(400).json({
+                message: "Password must be at least 8 characters long and contain a letter, a number, and a special character."
+            });
         }
 
         const user = await Users.findOne({ email })
@@ -183,9 +197,15 @@ const resetPassword = async (req, res) => {
             return res.status(400).json({ message: "Invalid or expired token!" });
         }
 
-        if (newPassword.length < 8) {
-            return res.status(400).json({ message: "Password must be atleast 8 characters long!" })
+        if (!passwordRegex.test(newPassword)) {
+            return res.status(400).json({
+                message: "Password must be at least 8 characters long and contain a letter, a number, and a special character."
+            });
         }
+
+        // if (newPassword.length < 8) {
+        //     return res.status(400).json({ message: "Password must be atleast 8 characters long!" })
+        // }
 
         if (newPassword !== confirmNewPassword) {
 
@@ -236,16 +256,33 @@ const uploadProfilePic = async (req, res) => {
     try {
 
         const userId = req.user.userId;
-        const imageURL = req.file.path;
+        const updateData = {};
 
-        const updateUser = await Users.findByIdAndUpdate({
-            _id: userId
-        },
-            { $set: { profilePic: imageURL } },
+        // Only add photo if file was uploaded
+        if (req.file) {
+            updateData.profilePic = req.file.path;
+        }
+
+        // Only update name or bio if provided
+        if (req.body.name) {
+            updateData.name = req.body.name;
+        }
+
+        if (req.body.bio) {
+            updateData.bio = req.body.bio;
+        }
+        // If no fields provided, just return current user
+        if (Object.keys(updateData).length === 0) {
+            return res.status(200).json({ message: "No changes to update", user: await Users.findById(userId) });
+        }
+
+        const updatedUser = await Users.findByIdAndUpdate(
+            userId,
+            { $set: updateData },
             { new: true }
-        )
+        );
 
-        res.status(200).json({ message: "Image uploaded successfully", user: updateUser })
+        res.status(200).json({ message: "profile updated", user: updatedUser })
 
     } catch (err) {
 

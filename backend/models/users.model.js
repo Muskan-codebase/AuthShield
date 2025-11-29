@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
         unique: true,
         sparse: true
     }, // for Google users
+    
     profilePic: {
         type: String
     },
@@ -24,6 +25,9 @@ const userSchema = new mongoose.Schema({
     },
     confirmPassword: {
         type: String,
+    },
+    bio: {
+        type: String
     },
     otp: {
         type: String
