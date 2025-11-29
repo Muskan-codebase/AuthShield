@@ -13,11 +13,11 @@ function useEditProfile() {
             formData.append("profilePicture", file);
         }
 
-        if (name) {
+        if (name !== undefined) {
             formData.append("name", name);
         }
 
-        if (bio) {
+        if (bio !== undefined) {
             formData.append("bio", bio);
         }
 

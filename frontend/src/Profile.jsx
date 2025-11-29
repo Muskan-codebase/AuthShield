@@ -72,8 +72,8 @@ function Profile() {
             :
 
             (null)
-
           }
+          
           <div className='space-y-4'>
             <button onClick={() => document.getElementById('my_modal_1').showModal()} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer'><MdEditSquare />Edit profile</button>
             <button onClick={handleRemoveProfilePic} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer'>Remove Photo</button>
