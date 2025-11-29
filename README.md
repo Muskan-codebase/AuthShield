@@ -54,6 +54,10 @@
 
 ![user profile page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/user-profile.png)
 
+<h3>Profile Pic View</h3>
+
+![profile pic view](https://github.com/Muskan-codebase/AuthShield/blob/9bf0b355000ec7ac13d4c3d5c8044ecb37e2d9ea/frontend/src/assets/profile-pic-view.png)
+
 <h3>Edit User Profile</h3>
 
 ![edit user profile page](https://github.com/Muskan-codebase/AuthShield/blob/34d52bf99ab6e5ff10959b527186105fbe8459ea/frontend/src/assets/edit-profile.png)
