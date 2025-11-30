@@ -104,7 +104,7 @@
    JSON Web Tokens (JWT) are used to verify user identity and control access.  
     <ul>
       <li> After login, the server issues a signed token.</li>
-      <li>The token must be sent with every protected request.</li>
+      <li>The token must be sent with every protected request (for eg. Profile)</li>
       <li>Ensures only authenticated and authorized users can access sensitive routes.</li>
     </ul>
   </li>
@@ -123,7 +123,7 @@
   <br>
 <ul>
   <li><b>⚡ Helmet</b><br>
-    Helmet adds multiple secure HTTP headers automatically.
+    Helmet is a middleware that adds multiple secure HTTP headers automatically.
     <ul>
       <li>Helps prevent clickjacking, cross-site scripting, MIME sniffing, and other attacks. </li>
       <li>Enforces safer browser processing rules.</li>
