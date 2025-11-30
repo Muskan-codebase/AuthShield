@@ -100,12 +100,47 @@
 
 ## 🛡Security Implementations
 <ol>
-  <li><b>🔐 JWT Authentication & Authorization</b> – Ensures only verified users can access protected routes and sensitive operations.</li>
-  <li><b>🧹 Input Sanitization</b> – Uses <code>sanitize-html</code> to prevent XSS, script injections, and malicious HTML payloads.</li>
-  <li><b>⚡ Helmet</b> – Adds secure HTTP headers to protect against common web vulnerabilities and enforce safer browser behavior.</li>
-  <li><b>🛑 Rate Limiting</b> – Applied across critical APIs (Signup, Login etc.) to prevent brute-force attacks, spam registrations, multiple failed login attemtps and API abuse.</li>
-  <li><b>🔒 Password Hashing</b> – All user passwords are securely hashed using <code>bcrypt</code> before being stored in the database.</li>
-  <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b> – Uses <code>crypto</code> module to generate tokens for secure OTP verification and password resets.</li>
+  <li><b>🔐 JWT Authentication & Authorization</b>
+   JSON Web Tokens (JWT) are used to verify user identity and control access.  
+   - After login, the server issues a signed token.  
+   - The token must be sent with every protected request.  
+   - Ensures only authenticated and authorized users can access sensitive routes.
+  </li>
+  
+  <li><b>🧹 Input Sanitization</b>
+    Uses `sanitize-html` to clean and validate incoming data.  
+   - Blocks harmful scripts, malicious HTML tags, and embedded JS.  
+   - Prevents XSS attacks and script injections.  
+   - Ensures only safe content enters the database.
+  </li>
+  
+  <li><b>⚡ Helmet</b>
+    Helmet adds multiple secure HTTP headers automatically.
+    - Helps prevent clickjacking, cross-site scripting, MIME sniffing, and other attacks. 
+    - Enforces safer browser processing rules.
+    - Acts as a strong first layer of defense for Express applications.
+  </li>
+    
+  <li><b>🛑 Rate Limiting</b>
+    Implemented using `express-rate-limiter` on all API endpoints including critical ones such as Signup, Login.
+    - Limits repeated failed attempts from the same IP.
+    - Prevents brute-force attacks, spam registrations, and API flooding.
+    - Enhances overall application stability and user security.
+  </li>
+  
+  <li><b>🔒 Password Hashing</b>
+    All user passwords are encrypted using `bcrypt`.  
+   - Plaintext passwords are **never** stored.  
+   - Hashing + salting protects against rainbow table attacks.  
+   - Even if the database leaks, real passwords remain safe due to one-way hashing algorithm.
+  </li>
+  
+  <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b>
+    Uses Node.js `crypto` module for secure token creation.  
+   - Generates cryptographically strong random tokens.  
+   - Tokens are stored in hashed form and expire after a set time.  
+   - Used for OTP verification and password reset workflows to ensure only authorized users can update password.
+  </li>
 </ol>
 
 <hr> 
