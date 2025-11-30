@@ -112,7 +112,7 @@
   <br>
 <ul>
   <li><b>🧹 Input Sanitization</b><br>
-    Uses `sanitize-html` to clean and validate incoming data.  
+    Uses <pre>sanitize-html</pre> to clean and validate incoming data.  
     <ul>
       <li>Blocks harmful scripts, malicious HTML tags, and embedded JS.</li>
       <li>Prevents XSS attacks and script injections.  </li>
@@ -134,7 +134,7 @@
   <br>
 <ul>
   <li><b>🛑 Rate Limiting</b><br>
-    Implemented using `express-rate-limiter` on all API endpoints including critical ones such as Signup, Login.
+    Implemented using <pre>express-rate-limiter</pre> on all API endpoints including critical ones such as Signup, Login.
     <ul>
       <li>Limits repeated failed attempts from the same IP.</li>
       <li>Prevents brute-force attacks, spam registrations, and API flooding.</li>
@@ -145,9 +145,9 @@
   <br>
 <ul>
   <li><b>🔒 Password Hashing</b><br>
-    All user passwords are encrypted using `bcrypt`.
+    All user passwords are encrypted using <pre>bcrypt</pre>.
     <ul>
-      <li>Plaintext passwords are **never** stored.</li>
+      <li>Plaintext passwords are <b>never</b> stored.</li>
       <li>Hashing + salting protects against rainbow table attacks. </li>
       <li>Even if the database leaks, real passwords remain safe due to one-way hashing algorithm.</li>
     </ul>
@@ -156,7 +156,7 @@
   <br>
 <ul>
   <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b><br>
-    Uses Node.js `crypto` module for secure token creation.  
+    Uses Node.js <pre>crypto</pre> module for secure token creation.  
     <ul>
       <li>Generates cryptographically strong random tokens.</li>
       <li>Tokens are stored in hashed form and expire after a set time. </li>
