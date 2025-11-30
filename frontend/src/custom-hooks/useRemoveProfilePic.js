@@ -9,7 +9,7 @@ function useRemoveProfilePic() {
 
         try {
 
-            const response = await axios.delete("http://localhost:3000/api/removeProfilePic", {
+            const response = await axios.delete(`${process.env.BACKEND_URI}/removeProfilePic`, {
                 headers: {
                     "Authorization": `Bearer ${token}`,
                     "Content-Type": "Application/json"

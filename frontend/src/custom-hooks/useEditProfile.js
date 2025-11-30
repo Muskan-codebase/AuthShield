@@ -23,7 +23,7 @@ function useEditProfile() {
 
         try {
 
-            const response = await axios.put("http://localhost:3000/api/uploadImage",
+            const response = await axios.put(`${process.env.BACKEND_URI}/uploadImage`,
                 formData,
                 {
                     headers: {

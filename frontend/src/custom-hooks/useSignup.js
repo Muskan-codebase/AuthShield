@@ -10,7 +10,7 @@ const useSignup = () => {
 
         try {
 
-            const response = await axios.post("http://localhost:3000/api/signup", {
+            const response = await axios.post(`${process.env.BACKEND_URI}/signup`, {
                 name,
                 email,
                 password,
@@ -26,7 +26,6 @@ const useSignup = () => {
             }
 
            navigate("/profile")
-            // window.location.reload();
 
         } catch (error) {
 

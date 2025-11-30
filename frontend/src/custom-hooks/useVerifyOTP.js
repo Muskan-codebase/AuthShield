@@ -19,14 +19,7 @@ const useVerifyOTP = () => {
                 toast.success(response.data.message);
             }
 
-            // if (response.data.redirectURL) {
-            //     // Redirect user to reset-password page with token
-            //     window.location.href = response.data.redirectURL;
-            // }
-
             navigate(response.data.redirectURL)
-
-
 
         } catch (error) {
 

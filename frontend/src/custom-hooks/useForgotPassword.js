@@ -10,14 +10,13 @@ function useForgotPassword() {
 
         try {
 
-            const response = await axios.post("http://localhost:3000/api/forgotPassword", {
+            const response = await axios.post(`${process.env.BACKEND_URI}/forgotPassword`, {
                 email
             })
 
             if (response) {
 
                 toast.success(response.data.message)
-                // window.location.reload();
             }
 
             navigate("/verifyOTP")
