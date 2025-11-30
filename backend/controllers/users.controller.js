@@ -44,6 +44,7 @@ const signup = async (req, res) => {
         });
 
         const token = createJWT({ userId: newUser._id, email: newUser.email });
+
         await newUser.save();
 
         res.status(200).json({ message: "User signed up successfully", newUser, token })
@@ -191,6 +192,12 @@ const resetPassword = async (req, res) => {
 
         if (!user) {
             return res.status(400).json({ message: "Invalid or expired token!" });
+        }
+
+        const passwordMatch = await bcrypt.compare(newPassword, user.password);
+
+        if (passwordMatch) {
+            return res.status(400).json({ message: "create a new password!" });
         }
 
         if (!passwordRegex.test(newPassword)) {

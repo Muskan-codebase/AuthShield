@@ -17,15 +17,25 @@ const loginLimiter = rateLimit({
 
 const signupLimiter = rateLimit({
     windowMs: 15 * 60 * 100,
-    max: 10,
+    max: 5,
     handler: (_, res) => {
         console.log("Signup temporarily blocked due to multiple attempts. Try again in 15 minutes.");
         res.status(429).json({ message: "Signup temporarily blocked due to multiple attempts. Try again in 15 minutes." });
     }
 })
 
+const otpLimiter = rateLimit({
+    windowMs: 15 * 60 * 100,
+    max: 5,
+    handler: (_, res) => {
+        console.log("Too many attempts. Please try again after a few minutes.");
+        res.status(429).json({ message: "Too many attempts. Please try again after a few minutes." });
+    }
+})
+
 module.exports = {
     rateLimiter,
     loginLimiter,
-    signupLimiter
+    signupLimiter,
+    otpLimiter
 };

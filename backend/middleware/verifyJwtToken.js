@@ -4,7 +4,7 @@ const secret_key = process.env.SECRET_KEY;
 
 const verifyToken = (req, res, next) => {
 
-    //access headers from the incoming request
+    // access headers from the incoming request
     const header = req.headers["authorization"];
 
     //split headers data by space
