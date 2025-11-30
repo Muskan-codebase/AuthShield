@@ -111,7 +111,7 @@
 </ul>
   <br>
 <ul>
-  <li><b>🧹 Input Sanitization</b>
+  <li><b>🧹 Input Sanitization</b><br>
     Uses <code>sanitize-html</code> to clean and validate incoming data.
     <ul>
       <li>Blocks harmful scripts, malicious HTML tags, and embedded JS.</li>
