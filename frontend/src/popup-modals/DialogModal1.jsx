@@ -21,7 +21,7 @@ function DialogModal1({ props, updateFile, updateName, updateBio, editName, bio 
                         <label className='text-lg'>Bio</label><br></br>
                         <textarea className="textarea input w-full" onChange={updateBio} value={bio} placeholder="Bio"></textarea>
                         <br></br>
-                        <button type='submit' className='bg-blue-600 w-full text-white text-lg rounded mt-4 p-2 hover:bg-blue-500 cursor-pointer'>Edit</button>
+                        <button type='submit' className='bg-blue-600 w-full text-white text-lg rounded mt-4 p-2 hover:bg-blue-500 cursor-pointer active:bg-blue-600'>Edit</button>
                     </form>
                 </div>
             </dialog>
