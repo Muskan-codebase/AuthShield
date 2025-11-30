@@ -112,7 +112,7 @@
   <br>
 <ul>
   <li><b>🧹 Input Sanitization</b><br>
-    Uses sanitize-html to clean and validate incoming data.  <br>
+    Uses **`sanitize-html`** to clean and validate incoming data.  <br>
     <ul>
       <li>Blocks harmful scripts, malicious HTML tags, and embedded JS.</li>
       <li>Prevents XSS attacks and script injections.  </li>
