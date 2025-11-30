@@ -25,9 +25,9 @@ function Footer() {
           <a className="link link-hover">Cookie policy</a>
         </nav>
       </footer>
-      <footer className="bg-black text-white footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+      <footer className="bg-black text-white footer sm:footer-horizontal footer-center p-4">
         <aside>
-          <p>Designed & Developed by Muskan Mujavar. Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+          <p>Designed & Developed by Muskan Mujavar. Copyright © {new Date().getFullYear()}</p>
         </aside>
       </footer>
     </div>
