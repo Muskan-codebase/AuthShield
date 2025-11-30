@@ -99,17 +99,18 @@
 <hr>
 
 ## 🛡Security Implementations
-<ol>
+<ul>
   <li><b>🔐 JWT Authentication & Authorization</b><br>
    JSON Web Tokens (JWT) are used to verify user identity and control access.  
     <ul>
       <li> After login, the server issues a signed token.</li>
       <li>The token must be sent with every protected request.</li>
       <li>Ensures only authenticated and authorized users can access sensitive routes.</li>
+    </ul>
   </li>
-</ol>
+</ul>
   <br>
-<ol>
+<ul>
   <li><b>🧹 Input Sanitization</b><br>
     Uses `sanitize-html` to clean and validate incoming data.  
     <ul>
@@ -118,9 +119,9 @@
       <li>Ensures only safe content enters the database.</li>
     </ul>
   </li>
-</ol>
+</ul>
   <br>
-<ol>
+<ul>
   <li><b>⚡ Helmet</b><br>
     Helmet adds multiple secure HTTP headers automatically.
     <ul>
@@ -129,9 +130,9 @@
       <li>Acts as a strong first layer of defense for Express applications.</li>
     </ul>
   </li>
-</ol>
+</ul>
   <br>
-<ol>
+<ul>
   <li><b>🛑 Rate Limiting</b><br>
     Implemented using `express-rate-limiter` on all API endpoints including critical ones such as Signup, Login.
     <ul>
@@ -140,9 +141,9 @@
       <li>Enhances overall application stability and user security.</li>
     </ul>
   </li>
-</ol>
+</ul>
   <br>
-<ol>
+<ul>
   <li><b>🔒 Password Hashing</b><br>
     All user passwords are encrypted using `bcrypt`.
     <ul>
@@ -151,9 +152,9 @@
       <li>Even if the database leaks, real passwords remain safe due to one-way hashing algorithm.</li>
     </ul>
   </li>
-</ol>
+</ul>
   <br>
-<ol>
+<ul>
   <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b><br>
     Uses Node.js `crypto` module for secure token creation.  
     <ul>
@@ -162,7 +163,7 @@
       <li>Used for OTP verification and password reset workflows to ensure only authorized users can update password.</li>
     </ul>
   </li>
-</ol>
+</ul>
 
 <hr> 
 
