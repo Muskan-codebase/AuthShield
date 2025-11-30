@@ -459,7 +459,7 @@
   <li>Implementing Google OAuth 2.0 from scratch</li>
   <li>sending mails and verifying OTP using Nodemailer</li>
   <li>Preventing real-world attacks: brute-force attacks, XSS, Input Sanitization from malicious code/scripts</li>
-  <li>generating crypto-based tokens with expiry validation for secure OTP verification for password resets ensuring only authorized users can update the password</li>
+  <li>Secure OTP verifications and password reset flows using crypto generated tokens to ensure only authorized users can reset passwords.</li>
   <li>implementation of Profile image uploads using Cloudinary storage</li>
   <li>Writing clean, modular, scalable Node.js code</li>
 </ul>
