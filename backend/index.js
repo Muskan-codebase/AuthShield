@@ -10,7 +10,7 @@ const sanitizeHtml = require('sanitize-html');
 require("./config")
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: `${process.env.FRONTEND_URI}`,
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }))
