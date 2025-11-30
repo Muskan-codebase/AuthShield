@@ -44,11 +44,6 @@ function Login() {
                 backgroundSize: "cover",
                 backgroundAttachment: "fixed",
                 minHeight: "91vh",
-                // display: "flex",
-                // justifyContent: "center",
-                // alignItems: "center",
-                // flexDirection: "column",
-                // padding: "50px"
             }} className='flex justify-center items-center'>
 
                 <form onSubmit={userLogin} className='bg-white border-2 border-gray-300 shadow-2xl shadow-black rounded-xl p-7 h-auto w-110 space-y-4'>

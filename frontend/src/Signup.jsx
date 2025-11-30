@@ -22,7 +22,7 @@ function Signup() {
     useEffect(() => {
         // Initialize Google Sign-In
         google.accounts.id.initialize({
-            client_id: "447769262246-ic62bekl2etfnia24afv2b8p51jompnq.apps.googleusercontent.com", // replace with your Google Client ID
+            client_id: `${process.env.GOOGLE_CLIENT_ID}`, // replace with your Google Client ID
             callback: handleGoogleResponse,
         });
 
@@ -37,7 +37,7 @@ function Signup() {
     const handleGoogleResponse = async (response) => {
         try {
             // Send Google ID token to your backend
-            const res = await axios.post("http://localhost:3000/api/auth/google", {
+            const res = await axios.post(`${process.env.BACKEND_URI}/auth/google`, {
                 token: response.credential,
             });
 
@@ -144,11 +144,6 @@ function Signup() {
 
                 </form >
             </div >
-
-            {/* <Toaster
-                position="top-center"
-                reverseOrder={false}
-            /> */}
         </>
     )
 }

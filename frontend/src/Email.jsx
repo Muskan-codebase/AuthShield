@@ -49,11 +49,6 @@ function Email() {
                     <button className='text-lg p-2 w-full bg-blue-600 text-white rounded mt-5 hover:bg-blue-500 cursor-pointer active:bg-blue-700'>send OTP</button>
                 </form>
             </div>
-
-            {/* <Toaster
-                position="top-center"
-                reverseOrder={false}
-            /> */}
         </>
     )
 }

@@ -89,11 +89,6 @@ function Profile() {
 
       <DialogModal3 props={user?.profilePic}></DialogModal3>
 
-      {/* <Toaster
-        position="top-center"
-        reverseOrder={false}
-      /> */}
-
     </>
   )
 }
