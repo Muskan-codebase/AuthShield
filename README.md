@@ -99,7 +99,7 @@
 <hr>
 
 ## 🛡Security Implementations
-<ul>
+<ol>
   <li><b>🔐 JWT Authentication & Authorization</b><br>
    JSON Web Tokens (JWT) are used to verify user identity and control access.  
     <ul>
@@ -108,9 +108,7 @@
       <li>Ensures only authenticated and authorized users can access sensitive routes.</li>
     </ul>
   </li>
-</ul>
   <br>
-<ul>
   <li><b>🧹 Input Sanitization</b><br>
     Uses <code>sanitize-html</code> to clean and validate incoming data.
     <ul>
@@ -119,9 +117,7 @@
       <li>Ensures only safe content enters the database.</li>
     </ul>
   </li>
-</ul>
   <br>
-<ul>
   <li><b>⚡ Helmet</b><br>
     <code>Helmet</code> is a middleware that adds multiple secure HTTP headers automatically.
     <ul>
@@ -129,41 +125,35 @@
       <li>Enforces safer browser processing rules.</li>
       <li>Acts as a strong first layer of defense for Express applications.</li>
     </ul>
-  </li>
-</ul>
+</li>
   <br>
-<ul>
-  <li><b>🛑 Rate Limiting</b><br>
+<li><b>🛑 Rate Limiting</b><br>
     Implemented using <code>express-rate-limiter</code> on all API endpoints including critical ones such as Signup, Login.
     <ul>
       <li>Limits repeated failed attempts from the same IP.</li>
       <li>Prevents brute-force attacks, spam registrations, and API flooding.</li>
       <li>Enhances overall application stability and user security.</li>
     </ul>
-  </li>
-</ul>
+</li>
   <br>
-<ul>
-  <li><b>🔒 Password Hashing</b><br>
+<li><b>🔒 Password Hashing</b><br>
     All user passwords are encrypted using <code>bcrypt</code>.
     <ul>
       <li>Plaintext passwords are <b>never</b> stored.</li>
       <li>Hashing + salting protects against rainbow table attacks. </li>
       <li>Even if the database leaks, real passwords remain safe due to one-way hashing algorithm.</li>
     </ul>
-  </li>
-</ul>
-  <br>
-<ul>
-  <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b><br>
+</li>
+<br>
+<li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b><br>
     Uses Node.js <code>crypto</code> module for secure token creation.  
     <ul>
       <li>Generates cryptographically strong random tokens.</li>
       <li>Tokens are stored in hashed form and expire after a set time. </li>
       <li>Used for OTP verification and password reset workflows to ensure only authorized users can update password.</li>
     </ul>
-  </li>
-</ul>
+</li>
+</ol>
 
 <hr> 
 
