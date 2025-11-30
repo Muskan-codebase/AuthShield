@@ -111,8 +111,8 @@
 </ul>
   <br>
 <ul>
-  <li><b>🧹 Input Sanitization</b><br>
-    Uses **`sanitize-html`** to clean and validate incoming data.  <br>
+  <li><b>🧹 Input Sanitization</b>
+    Uses <code>sanitize-html</code> to clean and validate incoming data.
     <ul>
       <li>Blocks harmful scripts, malicious HTML tags, and embedded JS.</li>
       <li>Prevents XSS attacks and script injections.  </li>
@@ -123,7 +123,7 @@
   <br>
 <ul>
   <li><b>⚡ Helmet</b><br>
-    Helmet is a middleware that adds multiple secure HTTP headers automatically.
+    <code>Helmet</code> is a middleware that adds multiple secure HTTP headers automatically.
     <ul>
       <li>Helps prevent clickjacking, cross-site scripting, MIME sniffing, and other attacks. </li>
       <li>Enforces safer browser processing rules.</li>
@@ -134,7 +134,7 @@
   <br>
 <ul>
   <li><b>🛑 Rate Limiting</b><br>
-    Implemented using <pre>express-rate-limiter</pre> on all API endpoints including critical ones such as Signup, Login.
+    Implemented using <code>express-rate-limiter</code> on all API endpoints including critical ones such as Signup, Login.
     <ul>
       <li>Limits repeated failed attempts from the same IP.</li>
       <li>Prevents brute-force attacks, spam registrations, and API flooding.</li>
@@ -145,7 +145,7 @@
   <br>
 <ul>
   <li><b>🔒 Password Hashing</b><br>
-    All user passwords are encrypted using <pre>bcrypt</pre>.
+    All user passwords are encrypted using <code>bcrypt</code>.
     <ul>
       <li>Plaintext passwords are <b>never</b> stored.</li>
       <li>Hashing + salting protects against rainbow table attacks. </li>
@@ -156,7 +156,7 @@
   <br>
 <ul>
   <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b><br>
-    Uses Node.js <pre>crypto</pre> module for secure token creation.  
+    Uses Node.js <code>crypto</code> module for secure token creation.  
     <ul>
       <li>Generates cryptographically strong random tokens.</li>
       <li>Tokens are stored in hashed form and expire after a set time. </li>
