@@ -10,7 +10,7 @@ const useSignup = () => {
 
         try {
 
-            const response = await axios.post(`${process.env.BACKEND_URI}/signup`, {
+            const response = await axios.post("http://localhost:3000/api/signup", {
                 name,
                 email,
                 password,

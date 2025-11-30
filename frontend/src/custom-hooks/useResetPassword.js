@@ -8,7 +8,7 @@ const useResetPassword = function () {
 
     const resetPassword = async function ({ email, resetToken, newPassword, confirmNewPassword }) {
         try {
-            const response = await axios.post(`${process.env.BACKEND_URI}/resetPassword`, {
+            const response = await axios.post("http://localhost:3000/api/resetPassword", {
                 email,
                 resetToken,
                 newPassword,

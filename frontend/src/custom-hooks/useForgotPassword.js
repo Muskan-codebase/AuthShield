@@ -10,7 +10,7 @@ function useForgotPassword() {
 
         try {
 
-            const response = await axios.post(`${process.env.BACKEND_URI}/forgotPassword`, {
+            const response = await axios.post("http://localhost:3000/api/forgotPassword", {
                 email
             })
 

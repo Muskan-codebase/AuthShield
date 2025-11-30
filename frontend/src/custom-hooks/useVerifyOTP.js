@@ -10,7 +10,7 @@ const useVerifyOTP = () => {
 
         try {
 
-            const response = await axios.post("http://localhost:3000/api/verifyOTP", {
+            const response = await axios.post(`http://localhost:3000/api/verifyOTP`, {
                 email,
                 otp
             })

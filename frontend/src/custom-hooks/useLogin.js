@@ -11,7 +11,7 @@ function useLogin() {
 
         try {
 
-            const response = await axios.post(`${process.env.BACKEND_URI}/login`, {
+            const response = await axios.post("http://localhost:3000/api/login", {
                 email,
                 password
             });

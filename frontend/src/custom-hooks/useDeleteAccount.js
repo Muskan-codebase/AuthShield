@@ -12,7 +12,7 @@ function useDeleteAccount() {
 
         try {
 
-            const response = await axios.delete(`${process.env.BACKEND_URI}/deleteAccount`, {
+            const response = await axios.delete("http://localhost:3000/api/deleteAccount", {
                 headers: {
                     "Authorization": `Bearer ${userToken}`,
                 }

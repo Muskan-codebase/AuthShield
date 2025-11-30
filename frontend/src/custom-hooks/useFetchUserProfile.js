@@ -11,7 +11,7 @@ function useFetchUserProfile() {
 
         try {
 
-            const response = await axios.get(`${process.env.BACKEND_URI}/getUserProfile`, {
+            const response = await axios.get("http://localhost:3000/api/getUserProfile", {
                 headers: {
                     "Authorization": `Bearer ${userToken}`,
                 }
