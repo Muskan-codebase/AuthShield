@@ -102,9 +102,10 @@
 <ol>
   <li><b>🔐 JWT Authentication & Authorization</b><br>
    JSON Web Tokens (JWT) are used to verify user identity and control access.  
-   - After login, the server issues a signed token.  
-   - The token must be sent with every protected request.  
-   - Ensures only authenticated and authorized users can access sensitive routes.
+    <ul>
+      <li> After login, the server issues a signed token.</li>
+      <li>The token must be sent with every protected request.</li>
+      <li>Ensures only authenticated and authorized users can access sensitive routes.</li>
   </li>
   <br>
   <li><b>🧹 Input Sanitization</b><br>
@@ -116,30 +117,38 @@
   <br>
   <li><b>⚡ Helmet</b><br>
     Helmet adds multiple secure HTTP headers automatically.
-    - Helps prevent clickjacking, cross-site scripting, MIME sniffing, and other attacks. 
-    - Enforces safer browser processing rules.
-    - Acts as a strong first layer of defense for Express applications.
+    <ul>
+      <li>Helps prevent clickjacking, cross-site scripting, MIME sniffing, and other attacks. </li>
+      <li>Enforces safer browser processing rules.</li>
+      <li>Acts as a strong first layer of defense for Express applications.</li>
+    </ul>
   </li>
   <br>
   <li><b>🛑 Rate Limiting</b><br>
     Implemented using `express-rate-limiter` on all API endpoints including critical ones such as Signup, Login.
-    - Limits repeated failed attempts from the same IP.
-    - Prevents brute-force attacks, spam registrations, and API flooding.
-    - Enhances overall application stability and user security.
+    <ul>
+      <li>Limits repeated failed attempts from the same IP.</li>
+      <li>Prevents brute-force attacks, spam registrations, and API flooding.</li>
+      <li>Enhances overall application stability and user security.</li>
+    </ul>
   </li>
   <br>
   <li><b>🔒 Password Hashing</b><br>
-    All user passwords are encrypted using `bcrypt`.  
-   - Plaintext passwords are **never** stored.  
-   - Hashing + salting protects against rainbow table attacks.  
-   - Even if the database leaks, real passwords remain safe due to one-way hashing algorithm.
+    All user passwords are encrypted using `bcrypt`.
+    <ul>
+      <li>Plaintext passwords are **never** stored.</li>
+      <li>Hashing + salting protects against rainbow table attacks. </li>
+      <li>Even if the database leaks, real passwords remain safe due to one-way hashing algorithm.</li>
+    </ul>
   </li>
   <br>
   <li><b>🔑 Crypto-Based Token Generation & Expiry Validation</b><br>
     Uses Node.js `crypto` module for secure token creation.  
-   - Generates cryptographically strong random tokens.  
-   - Tokens are stored in hashed form and expire after a set time.  
-   - Used for OTP verification and password reset workflows to ensure only authorized users can update password.
+    <ul>
+      <li>Generates cryptographically strong random tokens.</li>
+      <li>Tokens are stored in hashed form and expire after a set time. </li>
+      <li>Used for OTP verification and password reset workflows to ensure only authorized users can update password.</li>
+    </ul>
   </li>
 </ol>
 
