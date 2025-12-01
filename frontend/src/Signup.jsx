@@ -6,6 +6,8 @@ import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
+import { useContext } from 'react';
+import { AuthContext } from './context-api/AuthContext';
 import useSignup from './custom-hooks/useSignup';
 
 function Signup() {
@@ -18,6 +20,7 @@ function Signup() {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const navigate = useNavigate();
     const { signup } = useSignup();
+    const { checkAuth } = useContext(AuthContext);
 
     useEffect(() => {
         // Initialize Google Sign-In
@@ -37,14 +40,16 @@ function Signup() {
     const handleGoogleResponse = async (response) => {
         try {
             // Send Google ID token to your backend
-            const res = await axios.post(`http://localhost:3000/api/auth/google`, {
-                token: response.credential,
-            });
+            const res = await axios.post(`http://localhost:3000/api/auth/google`,
+                { token: response.credential },
+                { withCredentials: true }
+            );
 
-            // Save JWT
-            localStorage.setItem("Token", res.data.token);
+            await checkAuth();
+
             toast.success("Logged in successfully with Google!");
             navigate("/profile"); // redirect after login
+
         } catch (err) {
             console.error(err);
             toast.error("Google login failed. Try again.");

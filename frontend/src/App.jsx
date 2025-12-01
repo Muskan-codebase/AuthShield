@@ -11,7 +11,6 @@ import Profile from "./Profile"
 import ProtectedRoute from "./protected-route/ProtectedRoute"
 import toast, { Toaster } from "react-hot-toast";
 
-
 function App() {
 
   return (
@@ -29,6 +28,7 @@ function App() {
         <Route path="/verifyOTP" element={<VerifyOTP></VerifyOTP>} />
         <Route path="/resetPassword" element={<ResetPassword></ResetPassword>} />
 
+        {/* User profile -> Protected Route */}
         <Route element={<ProtectedRoute></ProtectedRoute>}>
           <Route path="/profile" element={<Profile></Profile>} />
         </Route>

@@ -13,6 +13,8 @@ import useDeleteAccount from './custom-hooks/useDeleteAccount';
 import useRemoveProfilePic from './custom-hooks/useRemoveProfilePic';
 import DialogModal2 from './popup-modals/DialogModal2';
 import DialogModal3 from './popup-modals/DialogModal3';
+import { AuthContext } from './context-api/AuthContext';
+import { useContext } from 'react';
 
 function Profile() {
 
@@ -21,12 +23,26 @@ function Profile() {
   const { fetchUserProfile } = useFetchUserProfile();
   const { deleteAccount } = useDeleteAccount()
   const { removeProfilePic } = useRemoveProfilePic();
+   const { isAuthenticated, setIsAuthenticated, loading } = useContext(AuthContext)
 
-  const userLogout = () => {
-    localStorage.removeItem("Token");
-    toast.success("Logging out");
-    navigate("/login");
-    window.location.reload();
+  const userLogout = async () => {
+    try {
+      const response = await axios.post("http://localhost:3000/api/logout",
+        {},
+        { withCredentials: true }
+      );
+      setIsAuthenticated(false); // update context
+
+      if (response) {
+
+        toast.success(response.data.message)
+      }
+
+      navigate("/");
+
+    } catch (err) {
+      console.log(err.response?.data || "Logout failed");
+    }
   }
 
   useEffect(() => {
@@ -73,7 +89,7 @@ function Profile() {
 
             (null)
           }
-          
+
           <div className='space-y-4'>
             <button onClick={() => document.getElementById('my_modal_1').showModal()} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer active:bg-blue-700'><MdEditSquare />Edit profile</button>
             <button onClick={handleRemoveProfilePic} className='flex items-center justify-center bg-blue-600 border-none p-2 w-full text-white text-md rounded hover:bg-blue-500 cursor-pointer active:bg-blue-700'>Remove Photo</button>
