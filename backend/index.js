@@ -7,6 +7,7 @@ const googleOAuthRoute = require("./routes/google.OAuth.route")
 const cors = require("cors");
 const helmet = require("helmet");
 const sanitizeHtml = require('sanitize-html');
+const cookieParser = require("cookie-parser")
 require("./config")
 
 app.use(cors({
@@ -17,6 +18,7 @@ app.use(cors({
 
 //built-in middleware to convert incoming request data to json()
 app.use(express.json())
+app.use(cookieParser())
 
 // Helmet is a built-in middleware to add security-related HTTP headers
 // Protects against XSS, clickjacking, MIME type sniffing, and other attacks
