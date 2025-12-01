@@ -1,7 +1,7 @@
 const verifyToken = require("../middleware/verifyJwtToken");
 const { signup, login, sendOTP, verifyOTP, resetPassword,
     getUserProfile, uploadProfilePic, removeProfilePic,
-    deleteUser } = require("../controllers/users.controller")
+    logout, deleteUser } = require("../controllers/users.controller")
 const { signupLimiter, loginLimiter, otpLimiter } = require("../rate-limiter/rateLimiter")
 const parser = require("../middleware/upload");
 const express = require("express")
@@ -19,6 +19,10 @@ route.post("/resetPassword", resetPassword)
 route.get("/getUserProfile", verifyToken, getUserProfile)
 route.put("/uploadImage", verifyToken, parser.single("profilePicture"), uploadProfilePic)
 route.delete("/removeProfilePic", verifyToken, removeProfilePic)
+route.post("/logout", logout);
+route.get("/verify", verifyToken, (req, res) => {
+    res.status(200).json({ message: "User is authenticated", userId: req.userId });
+})
 route.delete("/deleteAccount", verifyToken, deleteUser)
 
 module.exports = route;
