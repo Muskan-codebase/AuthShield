@@ -31,6 +31,13 @@ const googleLogin = async (req, res) => {
     // Generate JWT using your existing function
     const jwtToken = createJWT({ userId: user._id });
 
+    res.cookie("token", jwtToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production", // only over HTTPS in production
+      sameSite: "strict", // CSRF protection
+      maxAge: 24 * 60 * 60 * 1000, // 1 day
+    });
+
     res.json({ token: jwtToken, user });
   } catch (err) {
     console.error(err);
@@ -39,5 +46,5 @@ const googleLogin = async (req, res) => {
 };
 
 module.exports = {
-    googleLogin
+  googleLogin
 }
