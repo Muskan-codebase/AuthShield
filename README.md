@@ -100,12 +100,12 @@
 
 ## 🛡Security Implementations
 <ol>
-  <li><b>🔐 JWT Authentication & Authorization</b><br>
+  <li><b>🔐 JWT Authentication</b><br>
    JSON Web Tokens (JWT) are used to verify user identity and control access.  
     <ul>
       <li> After login, the server issues a signed token.</li>
       <li>The token must be sent with every protected request (for eg. Profile)</li>
-      <li>Ensures only authenticated and authorized users can access sensitive routes.</li>
+      <li>Ensures only authenticated users can access sensitive routes.</li>
     </ul>
   </li>
   <br>
