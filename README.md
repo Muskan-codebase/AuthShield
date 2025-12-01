@@ -399,10 +399,22 @@
 ┃ ┣ 📂assets
 ┃ ┃ ┣ 📜blue-bg.avif
 ┃ ┃ ┣ 📜blue-bg.jpg
+┃ ┃ ┣ 📜delete-account.png
+┃ ┃ ┣ 📜edit-profile.png
+┃ ┃ ┣ 📜forgot-password.png
+┃ ┃ ┣ 📜home.png
+┃ ┃ ┣ 📜login.png
 ┃ ┃ ┣ 📜orange-bg.jpg
 ┃ ┃ ┣ 📜profile-icon.webp
+┃ ┃ ┣ 📜profile-pic-view.png
 ┃ ┃ ┣ 📜react.svg
-┃ ┃ ┗ 📜shield.png
+┃ ┃ ┣ 📜reset-password.png
+┃ ┃ ┣ 📜shield.png
+┃ ┃ ┣ 📜signup.png
+┃ ┃ ┣ 📜user-profile.png
+┃ ┃ ┗ 📜verify-otp.png
+┃ ┣ 📂context-api
+┃ ┃ ┗ 📜AuthContext.jsx
 ┃ ┣ 📂custom-hooks
 ┃ ┃ ┣ 📜useDeleteAccount.js
 ┃ ┃ ┣ 📜useEditProfile.js
