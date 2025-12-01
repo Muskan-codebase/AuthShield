@@ -45,6 +45,14 @@ const signup = async (req, res) => {
 
         const token = createJWT({ userId: newUser._id, email: newUser.email });
 
+        //Set cookie
+        res.cookie("token", token, {
+            httpOnly: true, // cannot be accessed by JS
+            secure: process.env.NODE_ENV === "production", // only over HTTPS in production
+            sameSite: "lax", // CSRF protection
+            maxAge: 24 * 60 * 60 * 1000, // 1 day
+        });
+
         await newUser.save();
 
         res.status(200).json({ message: "User signed up successfully", newUser, token })
@@ -85,6 +93,15 @@ const login = async (req, res) => {
         }
 
         const token = createJWT({ userId: user._id, email: user.email })
+
+        //Set cookie
+        res.cookie("token", token, {
+            httpOnly: true, // cannot be accessed by JS
+            secure: process.env.NODE_ENV === "production", // only over HTTPS in production
+            sameSite: "lax", // CSRF protection
+            maxAge: 24 * 60 * 60 * 1000, // 1 day
+        });
+
         res.status(200).json({ message: "User logged in successfully", user, token })
 
     } catch (err) {
@@ -321,6 +338,15 @@ const removeProfilePic = async (req, res) => {
     }
 }
 
+const logout = async (_, res) => {
+    res.clearCookie("token", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production", // only over HTTPS in production
+        sameSite: "strict"
+    });
+    res.status(200).json({ message: "Logged out successfully" });
+}
+
 const deleteUser = async (req, res) => {
 
     try {
@@ -334,6 +360,12 @@ const deleteUser = async (req, res) => {
         }
 
         if (user) {
+
+            res.clearCookie("token", {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === "production", // only over HTTPS in production
+                sameSite: "strict"
+            });
             return res.status(200).json({ message: "Account deleted successfully", user });
         }
 
@@ -351,6 +383,7 @@ module.exports = {
     getUserProfile,
     uploadProfilePic,
     removeProfilePic,
+    logout,
     deleteUser
 }
 
