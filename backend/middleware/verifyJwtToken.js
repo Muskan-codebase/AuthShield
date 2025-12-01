@@ -4,14 +4,7 @@ const secret_key = process.env.SECRET_KEY;
 
 const verifyToken = (req, res, next) => {
 
-    // access headers from the incoming request
-    const header = req.headers["authorization"];
-
-    //split headers data by space
-    const bearer = header.split(" ");
-
-    //access the token from the array
-    const token = bearer[1];
+    const token = req.cookies.token; // read from cookie
 
     if (!token) {
 
