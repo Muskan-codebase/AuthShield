@@ -1,10 +1,14 @@
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../context-api/AuthContext";
+import { useContext } from "react";
 
 const useSignup = () => {
 
     const navigate = useNavigate();
+    const { setIsAuthenticated } = useContext(AuthContext);
+
 
     const signup = async ({ name, email, password, confirmPassword }) => {
 
@@ -15,17 +19,18 @@ const useSignup = () => {
                 email,
                 password,
                 confirmPassword
-            })
+            }, { withCredentials: true } //send & receive httpOnly cookies
+            )
 
             console.log(response);
-            localStorage.setItem("Token", response.data.token);
+            setIsAuthenticated(true);
 
             if (response) {
 
                 toast.success(response.data.message);
             }
 
-           navigate("/profile")
+            navigate("/profile")
 
         } catch (error) {
 

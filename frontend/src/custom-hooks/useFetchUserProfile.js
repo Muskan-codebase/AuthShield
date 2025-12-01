@@ -4,18 +4,16 @@ import axios from "axios";
 
 function useFetchUserProfile() {
 
-    const fetchUserProfile = async function(setUser) {
+    const fetchUserProfile = async function (setUser) {
 
         const userToken = localStorage.getItem("Token");
         console.log(userToken)
 
         try {
 
-            const response = await axios.get("http://localhost:3000/api/getUserProfile", {
-                headers: {
-                    "Authorization": `Bearer ${userToken}`,
-                }
-            });
+            const response = await axios.get("http://localhost:3000/api/getUserProfile",
+                { withCredentials: true }
+            );
 
             console.log(response.data.user);
             setUser(response.data.user)

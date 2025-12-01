@@ -5,16 +5,11 @@ function useRemoveProfilePic() {
 
     const removeProfilePic = async function () {
 
-        const token = localStorage.getItem("Token");
-
         try {
 
-            const response = await axios.delete("http://localhost:3000/api/removeProfilePic", {
-                headers: {
-                    "Authorization": `Bearer ${token}`,
-                    "Content-Type": "Application/json"
-                }
-            })
+            const response = await axios.delete("http://localhost:3000/api/removeProfilePic",
+                { withCredentials: true }
+            )
 
             console.log(response.data);
 

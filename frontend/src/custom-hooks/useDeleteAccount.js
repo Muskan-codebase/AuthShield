@@ -1,22 +1,23 @@
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../context-api/AuthContext";
+import { useContext } from "react";
 
 function useDeleteAccount() {
 
     const navigate = useNavigate();
+    const { setIsAuthenticated } = useContext(AuthContext);
 
     const deleteAccount = async () => {
 
-        const userToken = localStorage.getItem("Token");
-
         try {
 
-            const response = await axios.delete("http://localhost:3000/api/deleteAccount", {
-                headers: {
-                    "Authorization": `Bearer ${userToken}`,
-                }
-            });
+            const response = await axios.delete("http://localhost:3000/api/deleteAccount", 
+                { withCredentials: true }
+            );
+
+            setIsAuthenticated(false)
 
             if (response) {
 
@@ -24,7 +25,6 @@ function useDeleteAccount() {
                 toast.success(response.data.message);
             }
 
-            localStorage.removeItem("Token")
             navigate("/")
 
         } catch (error) {

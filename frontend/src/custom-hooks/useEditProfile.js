@@ -6,7 +6,6 @@ function useEditProfile() {
 
     const editProfile = async (file, name, bio) => {
 
-        const token = localStorage.getItem("Token");
         const formData = new FormData();
 
         if (file) {
@@ -25,11 +24,8 @@ function useEditProfile() {
 
             const response = await axios.put("http://localhost:3000/api/uploadImage",
                 formData,
-                {
-                    headers: {
-                        "Authorization": `Bearer ${token}`,
-                    }
-                }
+                { withCredentials: true }
+
             )
 
             console.log("Updated Profile", response.data);

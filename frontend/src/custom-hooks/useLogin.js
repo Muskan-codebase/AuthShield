@@ -2,10 +2,14 @@
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../context-api/AuthContext";
+import { useContext } from "react";
 
 function useLogin() {
 
     const navigate = useNavigate();
+    const { setIsAuthenticated } = useContext(AuthContext);
+
 
     const login = async function ({ email, password }) {
 
@@ -14,9 +18,9 @@ function useLogin() {
             const response = await axios.post("http://localhost:3000/api/login", {
                 email,
                 password
-            });
+            }, { withCredentials: true });
 
-            localStorage.setItem("Token", response.data.token);
+            setIsAuthenticated(true);
 
             if (response) {
 
