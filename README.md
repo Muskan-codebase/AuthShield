@@ -151,7 +151,9 @@
     <ul>
       <li>Generates cryptographically strong random tokens.</li>
       <li>Tokens are stored in hashed form and expire after a set time. </li>
-      <li>Used for OTP verification and password reset workflows to ensure only authorized users can update password.</li>
+      <li>The backend sends a <b>crypto-token</b> to the frontend along with the OTP, allowing the user to verify their identity securely.</li>
+      <li>Ensures only users with the correct <b>OTP</b> and a <b>valid token</b> can complete verification or reset their password.</li>
+      <li>Supports secure workflows such as email OTP verification and password resets.</li> 
     </ul>
 </li>
 </ol>
