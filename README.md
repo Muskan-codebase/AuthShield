@@ -100,12 +100,13 @@
 
 ## 🛡Security Implementations
 <ol>
-  <li><b>🔐 JWT Authentication</b><br>
-   JSON Web Tokens (JWT) are used to verify user identity and control access.  
+  <li><b>🍪 HttpOnly Cookies for Authentication</b><br>
+    Instead of storing JWTs in localStorage, the server uses HttpOnly cookies to manage user sessions.
     <ul>
-      <li> After login, the server issues a signed token.</li>
-      <li>The token must be sent with every protected request (for eg. Profile)</li>
-      <li>Ensures only authenticated users can access sensitive routes.</li>
+      <li>After login, the server sends a cookie with a unique session token.</li>
+      <li>HttpOnly cookies cannot be accessed via JavaScript, preventing XSS attacks.</li>
+      <li>Automatically sent with every request to protected routes, ensuring only authenticated users can access sensitive data.</li>
+      <li>sameSite=strict helps protect the application from CSRF attacks.</li>
     </ul>
   </li>
   <br>
@@ -458,9 +459,7 @@
 
 ## 🚀 Future Enhancements
 <ol>
-  <li><b>🍪 HttpOnly Cookie Implementation</b> – Store authentication tokens in HttpOnly cookies to enhance security and prevent tokens being accessed through JavaScript.</li>
   <li><b>🛡️ Role-Based Authorization</b> – Implement roles (e.g., admin, user) to restrict access to certain routes and operations based on role permissions.</li>
-  <li><b>🔐 CSRF Protection</b> – Add Cross-Site Request Forgery protection to secure forms and API endpoints against unauthorized requests from malicious sites.</li>
   <li><b>📩 Resend OTP Functionality</b> – Enable users to request a new OTP if the previous one expires or is not received, improving the overall user experience and reliability of the authentication flow.</li>
 </ol>
 
