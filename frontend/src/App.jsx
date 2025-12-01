@@ -10,8 +10,20 @@ import ResetPassword from "./ResetPassword"
 import Profile from "./Profile"
 import ProtectedRoute from "./protected-route/ProtectedRoute"
 import toast, { Toaster } from "react-hot-toast";
+import { AuthContext } from "./context-api/AuthContext"
+import { useContext } from "react"
 
 function App() {
+
+  const { loading } = useContext(AuthContext);
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 flex justify-center items-center bg-white">
+        <span className="loading loading-spinner loading-2xl"></span>
+      </div>
+    );
+  }
 
   return (
     <>

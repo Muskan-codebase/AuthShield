@@ -20,7 +20,7 @@ function Signup() {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const navigate = useNavigate();
     const { signup } = useSignup();
-    const { checkAuth } = useContext(AuthContext);
+    const { setIsAuthenticated } = useContext(AuthContext);
 
     useEffect(() => {
         // Initialize Google Sign-In
@@ -45,7 +45,8 @@ function Signup() {
                 { withCredentials: true }
             );
 
-            await checkAuth();
+            // await checkAuth();
+            setIsAuthenticated(true)
 
             toast.success("Logged in successfully with Google!");
             navigate("/profile"); // redirect after login
