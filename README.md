@@ -338,6 +338,16 @@
 }
 </pre>
 
+<h4>2. Logout</h4>
+<p><b>Method</b>: POST</p>
+<p><b>URL</b>: localhost:3000/api/logout</p>
+<p><b>Response body:</b></p>
+<pre>
+{
+    "message": "Logged out successfully",
+}
+</pre>
+
 <h4>2. Delete Account</h4>
 <p><b>Method</b>: DELETE</p>
 <p><b>URL</b>: localhost:3000/api/deleteAccount</p>
