@@ -328,7 +328,7 @@
 }
 </pre>
 
-<h4>2. Remove Photo</h4>
+<h4>3. Remove Photo</h4>
 <p><b>Method</b>: DELETE</p>
 <p><b>URL</b>: localhost:3000/api/removeProfilePic</p>
 <p><b>Response body:</b></p>
@@ -338,7 +338,7 @@
 }
 </pre>
 
-<h4>2. Logout</h4>
+<h4>4. Logout</h4>
 <p><b>Method</b>: POST</p>
 <p><b>URL</b>: localhost:3000/api/logout</p>
 <p><b>Response body:</b></p>
@@ -348,7 +348,7 @@
 }
 </pre>
 
-<h4>2. Delete Account</h4>
+<h4>5. Delete Account</h4>
 <p><b>Method</b>: DELETE</p>
 <p><b>URL</b>: localhost:3000/api/deleteAccount</p>
 <p><b>Response body:</b></p>
