@@ -295,7 +295,6 @@
 <h4>1. User Profile</h4>
 <p><b>Method</b>: GET</p>
 <p><b>URL</b>: localhost:3000/api/getUserProfile</p>
-<p><b>Authorization</b>: Bearer < generated_token ></p>
 <p><b>Response body:</b></p>
 <pre>
 {
@@ -312,9 +311,7 @@
 <h4>2. Profile Photo Upload</h4>
 <p><b>Method</b>: PUT</p>
 <p><b>URL</b>: localhost:3000/api/uploadImage</p>
-<p><b>Authorization</b>: Bearer < generated_token ></p>
-<p><b>Request body:</b></p>
-<h4><b>form-data:</b></h4>
+<p><b>Request body:</b> form-data</p>
 <p><b>key</b>: profilePicture [File] | <b>value</b>: img.jpg </p>
 <p><b>Response body:</b></p>
 <pre>
@@ -331,10 +328,9 @@
 }
 </pre>
 
-<h4>2. Remove Photo</h4>
+<h4>3. Remove Photo</h4>
 <p><b>Method</b>: DELETE</p>
 <p><b>URL</b>: localhost:3000/api/removeProfilePic</p>
-<p><b>Authorization</b>: Bearer < generated_token ></p>
 <p><b>Response body:</b></p>
 <pre>
 {
@@ -342,10 +338,19 @@
 }
 </pre>
 
-<h4>2. Delete Account</h4>
+<h4>4. Logout</h4>
+<p><b>Method</b>: POST</p>
+<p><b>URL</b>: localhost:3000/api/logout</p>
+<p><b>Response body:</b></p>
+<pre>
+{
+    "message": "Logged out successfully",
+}
+</pre>
+
+<h4>5. Delete Account</h4>
 <p><b>Method</b>: DELETE</p>
 <p><b>URL</b>: localhost:3000/api/deleteAccount</p>
-<p><b>Authorization</b>: Bearer < generated_token ></p>
 <p><b>Response body:</b></p>
 <pre>
 {
