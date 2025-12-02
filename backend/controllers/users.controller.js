@@ -1,7 +1,7 @@
 const Users = require("../models/users.model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const createJWT = require("../middleware/generateToken")
+const createJWT = require("../utils/generateJwtToken")
 const generateOTP = require("../utils/generateOTP")
 const sendEmail = require("../utils/sendEmail")
 const cloudinary = require("../utils/cloudinary");
@@ -80,7 +80,7 @@ const login = async (req, res) => {
             });
         }
 
-        const user = await Users.findOne({ email })
+        const user = await Users.findOne({ email });
 
         if (!user) {
             return res.status(400).json({ message: "Invalid credentials!" });
@@ -134,7 +134,7 @@ const sendOTP = async (req, res) => {
         user.otpExpiry = expiry;
 
         await user.save();
-        await sendEmail(email, "Rest Password OTP", `Your OTP is ${otp}`)
+        await sendEmail(email, "Reset Password OTP", `Your OTP is ${otp}`)
 
         res.status(200).json({ message: "OTP sent. Check your email" })
 
@@ -248,7 +248,7 @@ const getUserProfile = async (req, res) => {
         //accessing req.user from the middleware
         const { userId } = req.user;
 
-        const userData = await Users.findById(userId)
+        const userData = await Users.findById(userId).select("-password");
 
         if (!userData) {
             return res.status(400).json({ message: "User not found!" })
@@ -285,14 +285,14 @@ const uploadProfilePic = async (req, res) => {
         }
         // If no fields provided, just return current user
         if (Object.keys(updateData).length === 0) {
-            return res.status(200).json({ message: "No changes to update", user: await Users.findById(userId) });
+            return res.status(200).json({ message: "No changes to update", user: await Users.findById(userId).select("-password") });
         }
 
         const updatedUser = await Users.findByIdAndUpdate(
             userId,
             { $set: updateData },
             { new: true }
-        );
+        ).select("-password");
 
         res.status(200).json({ message: "profile updated", user: updatedUser })
 
@@ -353,7 +353,7 @@ const deleteUser = async (req, res) => {
 
         const { userId } = req.user;
 
-        const user = await Users.findByIdAndDelete(userId);
+        const user = await Users.findByIdAndDelete(userId).select("-password");
 
         if (!user) {
             return res.status(400).json({ message: "User does not exists!" })
